@@ -1,0 +1,36 @@
+{
+  "folders": [
+    {
+      "path": "zip"
+    },
+    {
+      "path": ".",
+      "name": "root"
+    }
+  ],
+  "extensions": {
+    "recommendations": [
+      "ms-python.black-formatter",
+      "ms-python.isort",
+      "ms-python.python",
+      "ms-python.vscode-pylance"
+    ]
+  },
+  "settings": {
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+      },
+      "editor.rulers": [88],
+      "editor.tabSize": 4,
+      "editor.insertSpaces": true
+    },
+    "isort.args": ["--profile", "black"],
+    "files.associations": {
+      "*.css": "css",
+      "*.html": "django-html"
+    }
+  }
+}

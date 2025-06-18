@@ -1,0 +1,33 @@
+volumes:
+  postgres-data:
+
+services:
+  wagtail:
+    build: ./zip
+    working_dir: /app
+    command: ./manage.py runserver 0.0.0.0:8000
+    user: "wagtail:wagtail"
+    volumes:
+      - ./zip:/app:delegated,rw
+      - ./zip/ipython_config.py:/tmp/ipython/profile_default/ipython_config.py:delegated,rw
+    ports:
+      - "8000:8000"
+    environment:
+      DJANGO_RUNSERVER_HIDE_WARNING: "true"
+      DJANGO_DATABASE_HOST: db
+      DJANGO_DATABASE_NAME: zip
+      DJANGO_DATABASE_USERNAME: zip
+      DJANGO_DATABASE_PASSWORD: changeme
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: zip
+      POSTGRES_USER: zip
+      POSTGRES_PASSWORD: changeme
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    expose:
+      - "5432"
