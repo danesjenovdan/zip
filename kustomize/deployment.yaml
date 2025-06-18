@@ -1,0 +1,116 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zip
+  labels:
+    app: zip
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zip
+  template:
+    metadata:
+      labels:
+        app: zip
+    spec:
+      securityContext:
+        fsGroup: 1000
+      volumes:
+        - name: zip-storage
+          emptyDir: {}
+      initContainers:
+        - name: collectstatic
+          image: zip
+          volumeMounts:
+            - name: zip-storage
+              mountPath: /storage
+          command:
+            - python
+            - manage.py
+            - collectstatic
+            - --no-input
+          env:
+            - name: DJANGO_SETTINGS_MODULE
+              value: zip.settings.k8s
+          envFrom:
+            - secretRef:
+                name: zip-secrets
+          resources:
+            requests:
+              memory: 400Mi
+              cpu: 200m
+            limits:
+              memory: 800Mi
+              cpu: 400m
+        - name: migrate
+          image: zip
+          volumeMounts:
+            - name: zip-storage
+              mountPath: /storage
+          command:
+            - python
+            - manage.py
+            - migrate
+            - --no-input
+          env:
+            - name: DJANGO_SETTINGS_MODULE
+              value: zip.settings.k8s
+          envFrom:
+            - secretRef:
+                name: zip-secrets
+          resources:
+            requests:
+              memory: 400Mi
+              cpu: 200m
+            limits:
+              memory: 800Mi
+              cpu: 400m
+      containers:
+        - name: zip
+          image: zip
+          volumeMounts:
+            - name: zip-storage
+              mountPath: /storage
+          command:
+            - gunicorn
+            - zip.wsgi:application
+            - -b
+            - 0.0.0.0:8000
+            - --log-level
+            - DEBUG
+            - --workers
+            - "1"
+            - --threads
+            - "3"
+            - --timeout
+            - "90"
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DJANGO_SETTINGS_MODULE
+              value: zip.settings.k8s
+          envFrom:
+            - secretRef:
+                name: zip-secrets
+          resources:
+            requests:
+              memory: 400Mi
+              cpu: 200m
+            limits:
+              memory: 800Mi
+              cpu: 400m
+        - name: zip-nginx
+          image: nginx:alpine
+          volumeMounts:
+            - name: zip-storage
+              mountPath: /usr/share/nginx/html
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: 50Mi
+              cpu: 50m
+            limits:
+              memory: 50Mi
+              cpu: 50m
