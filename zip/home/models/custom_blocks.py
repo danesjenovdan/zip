@@ -180,3 +180,12 @@ class MaterialListBlock(blocks.StructBlock):
 
     class Meta:
         label = _("Material list")
+
+
+class PastProjectsBlock(blocks.StructBlock):
+    title = blocks.CharBlock(
+        label=_("Title"),
+    )
+
+    class Meta:
+        label = _("Past projects")

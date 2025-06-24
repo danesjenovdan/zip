@@ -13,6 +13,7 @@ from .custom_blocks import (
     MaterialListBlock,
     NewsletterSignupBlock,
     PastEventsBlock,
+    PastProjectsBlock,
     PromotionBlock,
     TitleBlock,
     UpcomingEventsBlock,
@@ -120,8 +121,35 @@ class EventPage(Page):
 
 
 class ProjectListPage(Page):
+    current_projects = StreamField(
+        [
+            (
+                "project",
+                blocks.PageChooserBlock(
+                    page_type=["home.ProjectPage"],
+                    label=_("Project"),
+                ),
+            ),
+        ],
+        blank=True,
+        verbose_name=_("Current projects"),
+    )
+    body = StreamField(
+        [
+            ("current_projects_block", CurrentProjectsBlock()),
+            ("past_projects_block", PastProjectsBlock()),
+        ],
+        blank=True,
+        verbose_name=_("Page body"),
+    )
+
     parent_page_types = ["HomePage"]
     max_count = 1
+
+    content_panels = Page.content_panels + [
+        FieldPanel("current_projects"),
+        FieldPanel("body"),
+    ]
 
     class Meta:
         verbose_name = _("Project list")
@@ -129,7 +157,31 @@ class ProjectListPage(Page):
 
 
 class ProjectPage(Page):
+    image = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="+",
+        verbose_name=_("Image"),
+    )
+    body = StreamField(
+        [
+            ("rich_text_block", blocks.RichTextBlock(label=_("Text"))),
+            ("gallery_block", GalleryBlock()),
+            ("material_list_block", MaterialListBlock()),
+            ("current_projects_block", CurrentProjectsBlock()),
+        ],
+        blank=True,
+        verbose_name=_("Page body"),
+    )
+
     parent_page_types = ["ProjectListPage"]
+
+    content_panels = Page.content_panels + [
+        FieldPanel("image"),
+        FieldPanel("body"),
+    ]
 
     class Meta:
         verbose_name = _("Project")

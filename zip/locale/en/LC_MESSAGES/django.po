@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-24 20:56+0200\n"
+"POT-Creation-Date: 2025-06-24 21:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,8 +22,8 @@ msgstr ""
 #: home/models/custom_blocks.py:73 home/models/custom_blocks.py:94
 #: home/models/custom_blocks.py:119 home/models/custom_blocks.py:142
 #: home/models/custom_blocks.py:161 home/models/custom_blocks.py:174
-#: home/models/settings.py:30 home/models/settings.py:54
-#: home/models/settings.py:144
+#: home/models/custom_blocks.py:187 home/models/settings.py:30
+#: home/models/settings.py:54 home/models/settings.py:144
 msgid "Title"
 msgstr ""
 
@@ -36,6 +36,7 @@ msgid "Description"
 msgstr ""
 
 #: home/models/custom_blocks.py:22 home/models/custom_blocks.py:98
+#: home/models/pages.py:166
 msgid "Image"
 msgstr ""
 
@@ -74,7 +75,7 @@ msgstr ""
 msgid "Projects marked as current."
 msgstr ""
 
-#: home/models/custom_blocks.py:89
+#: home/models/custom_blocks.py:89 home/models/pages.py:135
 msgid "Current projects"
 msgstr ""
 
@@ -123,96 +124,101 @@ msgstr ""
 msgid "Material list"
 msgstr ""
 
-#: home/models/pages.py:33 home/models/pages.py:56 home/models/pages.py:102
+#: home/models/custom_blocks.py:191
+msgid "Past projects"
+msgstr ""
+
+#: home/models/pages.py:34 home/models/pages.py:57 home/models/pages.py:103
+#: home/models/pages.py:143 home/models/pages.py:176
 msgid "Page body"
 msgstr ""
 
-#: home/models/pages.py:44
+#: home/models/pages.py:45
 msgid "Home page"
 msgstr ""
 
-#: home/models/pages.py:45
+#: home/models/pages.py:46
 msgid "Home pages"
 msgstr ""
 
-#: home/models/pages.py:67
+#: home/models/pages.py:68
 msgid "Event list"
 msgstr ""
 
-#: home/models/pages.py:68
+#: home/models/pages.py:69
 msgid "Event lists"
 msgstr ""
 
-#: home/models/pages.py:78
+#: home/models/pages.py:79
 msgid "Category"
 msgstr ""
 
-#: home/models/pages.py:83
+#: home/models/pages.py:84
 msgid "Start date and time"
 msgstr ""
 
-#: home/models/pages.py:88
+#: home/models/pages.py:89
 msgid "End date and time"
 msgstr ""
 
-#: home/models/pages.py:93
+#: home/models/pages.py:94
 msgid "Location"
 msgstr ""
 
-#: home/models/pages.py:97
+#: home/models/pages.py:98 home/models/pages.py:170
 msgid "Text"
 msgstr ""
 
-#: home/models/pages.py:116
+#: home/models/pages.py:119
 msgid "Event"
 msgstr ""
 
-#: home/models/pages.py:117
+#: home/models/pages.py:120
 msgid "Events"
 msgstr ""
 
-#: home/models/pages.py:125
-msgid "Project list"
-msgstr ""
-
-#: home/models/pages.py:126
-msgid "Project lists"
-msgstr ""
-
-#: home/models/pages.py:133
+#: home/models/pages.py:130 home/models/pages.py:187
 msgid "Project"
 msgstr ""
 
-#: home/models/pages.py:134
+#: home/models/pages.py:155
+msgid "Project list"
+msgstr ""
+
+#: home/models/pages.py:156
+msgid "Project lists"
+msgstr ""
+
+#: home/models/pages.py:188
 msgid "Projects"
 msgstr ""
 
-#: home/models/pages.py:142
+#: home/models/pages.py:196
 msgid "News list"
 msgstr ""
 
-#: home/models/pages.py:143
+#: home/models/pages.py:197
 msgid "News lists"
 msgstr ""
 
-#: home/models/pages.py:150
+#: home/models/pages.py:204
 msgid "News post"
 msgstr ""
 
-#: home/models/pages.py:151
+#: home/models/pages.py:205
 msgid "News posts"
 msgstr ""
 
-#: home/models/pages.py:159 home/models/pages.py:160
+#: home/models/pages.py:213 home/models/pages.py:214
 #: home/models/settings.py:100
 msgid "About us"
 msgstr ""
 
-#: home/models/pages.py:165
+#: home/models/pages.py:219
 msgid "Generic page"
 msgstr ""
 
-#: home/models/pages.py:166
+#: home/models/pages.py:220
 msgid "Generic pages"
 msgstr ""
 
