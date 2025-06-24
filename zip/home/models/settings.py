@@ -87,16 +87,16 @@ class HeaderSettings(BaseGenericSetting):
 
 
 class SocialMediaPlatforms(models.TextChoices):
-    BLUESKY = "bluesky", _("Bluesky")
-    FACEBOOK = "facebook", _("Facebook")
-    INSTAGRAM = "instagram", _("Instagram")
-    LINKEDIN = "linkedin", _("LinkedIn")
-    MASTODON = "mastodon", _("Mastodon")
-    THREADS = "threads", _("Threads")
-    TIKTOK = "tiktok", _("TikTok")
-    TWITTER = "twitter", _("Twitter")
-    VIMEO = "vimeo", _("Vimeo")
-    YOUTUBE = "youtube", _("YouTube")
+    BLUESKY = "bluesky", "Bluesky"
+    FACEBOOK = "facebook", "Facebook"
+    INSTAGRAM = "instagram", "Instagram"
+    LINKEDIN = "linkedin", "LinkedIn"
+    MASTODON = "mastodon", "Mastodon"
+    THREADS = "threads", "Threads"
+    TIKTOK = "tiktok", "TikTok"
+    TWITTER = "twitter", "Twitter"
+    VIMEO = "vimeo", "Vimeo"
+    YOUTUBE = "youtube", "YouTube"
 
 
 @register_setting

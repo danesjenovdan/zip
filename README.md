@@ -44,3 +44,8 @@ This project checks python formatting in a GitHub Action on push to `main`.
 - run `pip install -r requirements.txt` to install the new versions from the file
   - if there are conflicting dependencies, check the output and selectively downgrade specific dependencies to earlier versions until it successfully installs
 - When it all succeeds rebuild the docker container and test the app
+
+### Updating translations in .po locale files
+
+- Run `python manage.py makemessages_nofuzzy -a --no-obsolete` instead of the default django makemessages command. The default fuzzy matcher is too eager and sometimes breaks some unrelated translations.
+- If changes you make to translations are not visible, run `python manage.py compilemessages` and restart the development server

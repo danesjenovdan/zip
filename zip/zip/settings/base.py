@@ -124,11 +124,22 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = "sl-si"
+LANGUAGE_CODE = "sl"
+
+WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
+    ("sl", "Slovenian"),
+    ("en", "English"),
+]
+
+LOCALE_PATHS = [
+    os.path.join(PROJECT_DIR, "../locale"),
+]
 
 TIME_ZONE = "Europe/Ljubljana"
 
 USE_I18N = True
+
+WAGTAIL_I18N_ENABLED = True
 
 USE_TZ = True
 

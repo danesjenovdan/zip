@@ -16,12 +16,16 @@ ENV PYTHONUNBUFFERED=1 \
 
 # Install system packages required by Wagtail and Django.
 RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
+    gettext \
     build-essential \
     libpq-dev \
     libmariadb-dev \
     libjpeg62-turbo-dev \
     zlib1g-dev \
     libwebp-dev \
+    libicu-dev \
+    python3-icu \
+    pkg-config \
  && rm -rf /var/lib/apt/lists/*
 
 # Install the application server.
@@ -45,8 +49,8 @@ COPY --chown=wagtail:wagtail . .
 # Use user "wagtail" to run the build commands below and the server itself.
 USER wagtail
 
-# Collect static files.
-RUN python manage.py collectstatic --noinput --clear
+# Compile locale files.
+RUN python manage.py compilemessages
 
 # Runtime command that executes when "docker run" is called, it does the
 # following:

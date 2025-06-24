@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-24 14:06+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3);\n"
+
+#: home/models/settings.py:23
+msgid "Logo"
+msgstr "Logotip"
+
+#: home/models/settings.py:36 home/models/settings.py:60
+#: home/models/settings.py:150
+msgid "Title"
+msgstr "Naziv"
+
+#: home/models/settings.py:43
+msgid "Page"
+msgstr "Stran"
+
+#: home/models/settings.py:48
+msgid "Internal link"
+msgstr "Interna povezava"
+
+#: home/models/settings.py:67 home/models/settings.py:126
+msgid "Link"
+msgstr "Povezava"
+
+#: home/models/settings.py:72
+msgid "External link"
+msgstr "Zunanja povezava"
+
+#: home/models/settings.py:77
+msgid "Navigation"
+msgstr "Navigacija"
+
+#: home/models/settings.py:86
+msgid "Header Settings"
+msgstr "Nastavitve glave"
+
+#: home/models/settings.py:106
+msgid "About us"
+msgstr "O nas"
+
+#: home/models/settings.py:119
+msgid "Platform"
+msgstr "Platforma"
+
+#: home/models/settings.py:131
+msgid "Social media link"
+msgstr "Povezava do družbenega omrežja"
+
+#: home/models/settings.py:136
+msgid "Social media links"
+msgstr "Povezave do družbenih omrežij"
+
+#: home/models/settings.py:140
+msgid "Email"
+msgstr "E-pošta"
+
+#: home/models/settings.py:145
+msgid "Phone"
+msgstr "Telefon"
+
+#: home/models/settings.py:155
+msgid "Email label"
+msgstr "Oznaka e-pošte"
+
+#: home/models/settings.py:160
+msgid "Consent label"
+msgstr "Oznaka soglasja"
+
+#: home/models/settings.py:165
+msgid "Submit text"
+msgstr "Besedilo za potrditev"
+
+#: home/models/settings.py:176
+msgid "Contact info"
+msgstr "Kontaktne informacije"
+
+#: home/models/settings.py:185
+msgid "Newsletter signup"
+msgstr "Prijava na novice"
+
+#: home/models/settings.py:190
+msgid "Footer Settings"
+msgstr "Nastavitve noge"
+
+#: home/models/snippets.py:13 home/models/snippets.py:44
+msgid "Name"
+msgstr "Ime"
+
+#: home/models/snippets.py:18
+msgid "slug"
+msgstr "ključ"
+
+#: home/models/snippets.py:34
+msgid "Event Category"
+msgstr "Kategorija dogodka"
+
+#: home/models/snippets.py:35
+msgid "Event Categories"
+msgstr "Kategorije dogodkov"
+
+#: home/models/snippets.py:55
+msgid "Team Position"
+msgstr "Položaj v ekipi"
+
+#: home/models/snippets.py:56
+msgid "Team Positions"
+msgstr "Položaji v ekipi"
