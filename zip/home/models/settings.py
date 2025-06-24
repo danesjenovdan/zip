@@ -1,0 +1,190 @@
+from django.db import models
+from django.utils.translation import gettext_lazy as _
+from wagtail.admin.panels import FieldPanel, MultiFieldPanel
+from wagtail.blocks import (
+    CharBlock,
+    ChoiceBlock,
+    PageChooserBlock,
+    StructBlock,
+    URLBlock,
+)
+from wagtail.contrib.settings.models import BaseGenericSetting, register_setting
+from wagtail.fields import RichTextField, StreamField
+
+
+@register_setting
+class HeaderSettings(BaseGenericSetting):
+    logo = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="+",
+        verbose_name=_("Logo"),
+    )
+    navigation = StreamField(
+        [
+            (
+                "page_link",
+                StructBlock(
+                    [
+                        (
+                            "title",
+                            CharBlock(
+                                required=True,
+                                max_length=255,
+                                label=_("Title"),
+                            ),
+                        ),
+                        (
+                            "page",
+                            PageChooserBlock(
+                                required=True,
+                                label=_("Page"),
+                            ),
+                        ),
+                    ],
+                    icon="link",
+                    label=_("Internal link"),
+                ),
+            ),
+            (
+                "external_link",
+                StructBlock(
+                    [
+                        (
+                            "title",
+                            CharBlock(
+                                required=True,
+                                max_length=255,
+                                label=_("Title"),
+                            ),
+                        ),
+                        (
+                            "url",
+                            URLBlock(
+                                required=True,
+                                label=_("Link"),
+                            ),
+                        ),
+                    ],
+                    icon="link",
+                    label=_("External link"),
+                ),
+            ),
+        ],
+        blank=True,
+        verbose_name=_("Navigation"),
+    )
+
+    panels = [
+        FieldPanel("logo"),
+        FieldPanel("navigation"),
+    ]
+
+    class Meta:
+        verbose_name = _("Header Settings")
+
+
+class SocialMediaPlatforms(models.TextChoices):
+    BLUESKY = "bluesky", _("Bluesky")
+    FACEBOOK = "facebook", _("Facebook")
+    INSTAGRAM = "instagram", _("Instagram")
+    LINKEDIN = "linkedin", _("LinkedIn")
+    MASTODON = "mastodon", _("Mastodon")
+    THREADS = "threads", _("Threads")
+    TIKTOK = "tiktok", _("TikTok")
+    TWITTER = "twitter", _("Twitter")
+    VIMEO = "vimeo", _("Vimeo")
+    YOUTUBE = "youtube", _("YouTube")
+
+
+@register_setting
+class FooterSettings(BaseGenericSetting):
+    about_us = RichTextField(
+        blank=True,
+        verbose_name=_("About us"),
+    )
+    social_media_links = StreamField(
+        [
+            (
+                "social_media_link",
+                StructBlock(
+                    [
+                        (
+                            "platform",
+                            ChoiceBlock(
+                                required=True,
+                                choices=SocialMediaPlatforms.choices,
+                                label=_("Platform"),
+                            ),
+                        ),
+                        (
+                            "url",
+                            URLBlock(
+                                required=True,
+                                label=_("Link"),
+                            ),
+                        ),
+                    ],
+                    icon="link",
+                    label=_("Social media link"),
+                ),
+            ),
+        ],
+        blank=True,
+        verbose_name=_("Social media links"),
+    )
+    email = models.EmailField(
+        blank=True,
+        verbose_name=_("Email"),
+    )
+    phone = models.CharField(
+        max_length=20,
+        blank=True,
+        verbose_name=_("Phone"),
+    )
+    newsletter_signup_title = models.CharField(
+        max_length=255,
+        blank=True,
+        verbose_name=_("Title"),
+    )
+    newsletter_signup_email_label = models.CharField(
+        max_length=255,
+        blank=True,
+        verbose_name=_("Email label"),
+    )
+    newsletter_signup_consent_label = models.CharField(
+        max_length=255,
+        blank=True,
+        verbose_name=_("Consent label"),
+    )
+    newsletter_signup_submit_text = models.CharField(
+        max_length=255,
+        blank=True,
+        verbose_name=_("Submit text"),
+    )
+
+    panels = [
+        FieldPanel("about_us"),
+        MultiFieldPanel(
+            [
+                FieldPanel("social_media_links"),
+                FieldPanel("email"),
+                FieldPanel("phone"),
+            ],
+            heading=_("Contact info"),
+        ),
+        MultiFieldPanel(
+            [
+                FieldPanel("newsletter_signup_title"),
+                FieldPanel("newsletter_signup_email_label"),
+                FieldPanel("newsletter_signup_consent_label"),
+                FieldPanel("newsletter_signup_submit_text"),
+            ],
+            heading=_("Newsletter signup"),
+        ),
+    ]
+
+    class Meta:
+        verbose_name = _("Footer Settings")
