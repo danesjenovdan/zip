@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-24 14:06+0200\n"
+"POT-Creation-Date: 2025-06-24 14:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3);\n"
+
+#: home/models/pages.py:10
+msgid "Home page"
+msgstr "Vstopna stran"
+
+#: home/models/pages.py:11
+msgid "Home pages"
+msgstr "Vstopne strani"
+
+#: home/models/pages.py:19
+msgid "Event list"
+msgstr "Seznam dogodkov"
+
+#: home/models/pages.py:20
+msgid "Event lists"
+msgstr "Seznami dogodkov"
+
+#: home/models/pages.py:27
+msgid "Event"
+msgstr "Dogodek"
+
+#: home/models/pages.py:28
+msgid "Events"
+msgstr "Dogodki"
+
+#: home/models/pages.py:36
+msgid "Project list"
+msgstr "Seznam projektov"
+
+#: home/models/pages.py:37
+msgid "Project lists"
+msgstr "Seznami projektov"
+
+#: home/models/pages.py:44
+msgid "Project"
+msgstr "Projekt"
+
+#: home/models/pages.py:45
+msgid "Projects"
+msgstr "Projekti"
+
+#: home/models/pages.py:53
+msgid "News list"
+msgstr "Seznam novic"
+
+#: home/models/pages.py:54
+msgid "News lists"
+msgstr "Seznami novic"
+
+#: home/models/pages.py:61
+msgid "News post"
+msgstr "Novica"
+
+#: home/models/pages.py:62
+msgid "News posts"
+msgstr "Novice"
+
+#: home/models/pages.py:70 home/models/pages.py:71 home/models/settings.py:106
+msgid "About us"
+msgstr "O nas"
+
+#: home/models/pages.py:76
+msgid "Generic page"
+msgstr "Splošna stran"
+
+#: home/models/pages.py:77
+msgid "Generic pages"
+msgstr "Splošne strani"
 
 #: home/models/settings.py:23
 msgid "Logo"
@@ -50,10 +118,6 @@ msgstr "Navigacija"
 #: home/models/settings.py:86
 msgid "Header Settings"
 msgstr "Nastavitve glave"
-
-#: home/models/settings.py:106
-msgid "About us"
-msgstr "O nas"
 
 #: home/models/settings.py:119
 msgid "Platform"

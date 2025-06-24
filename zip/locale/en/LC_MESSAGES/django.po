@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-24 14:06+0200\n"
+"POT-Creation-Date: 2025-06-24 14:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,74 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: home/models/pages.py:10
+msgid "Home page"
+msgstr ""
+
+#: home/models/pages.py:11
+msgid "Home pages"
+msgstr ""
+
+#: home/models/pages.py:19
+msgid "Event list"
+msgstr ""
+
+#: home/models/pages.py:20
+msgid "Event lists"
+msgstr ""
+
+#: home/models/pages.py:27
+msgid "Event"
+msgstr ""
+
+#: home/models/pages.py:28
+msgid "Events"
+msgstr ""
+
+#: home/models/pages.py:36
+msgid "Project list"
+msgstr ""
+
+#: home/models/pages.py:37
+msgid "Project lists"
+msgstr ""
+
+#: home/models/pages.py:44
+msgid "Project"
+msgstr ""
+
+#: home/models/pages.py:45
+msgid "Projects"
+msgstr ""
+
+#: home/models/pages.py:53
+msgid "News list"
+msgstr ""
+
+#: home/models/pages.py:54
+msgid "News lists"
+msgstr ""
+
+#: home/models/pages.py:61
+msgid "News post"
+msgstr ""
+
+#: home/models/pages.py:62
+msgid "News posts"
+msgstr ""
+
+#: home/models/pages.py:70 home/models/pages.py:71 home/models/settings.py:106
+msgid "About us"
+msgstr ""
+
+#: home/models/pages.py:76
+msgid "Generic page"
+msgstr ""
+
+#: home/models/pages.py:77
+msgid "Generic pages"
+msgstr ""
 
 #: home/models/settings.py:23
 msgid "Logo"
@@ -48,10 +116,6 @@ msgstr ""
 
 #: home/models/settings.py:86
 msgid "Header Settings"
-msgstr ""
-
-#: home/models/settings.py:106
-msgid "About us"
 msgstr ""
 
 #: home/models/settings.py:119
