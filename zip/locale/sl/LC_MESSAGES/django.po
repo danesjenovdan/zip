@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-24 14:36+0200\n"
+"POT-Creation-Date: 2025-06-24 20:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,148 +18,215 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3);\n"
 
-#: home/models/pages.py:10
-msgid "Home page"
-msgstr "Vstopna stran"
-
-#: home/models/pages.py:11
-msgid "Home pages"
-msgstr "Vstopne strani"
-
-#: home/models/pages.py:19
-msgid "Event list"
-msgstr "Seznam dogodkov"
-
-#: home/models/pages.py:20
-msgid "Event lists"
-msgstr "Seznami dogodkov"
-
-#: home/models/pages.py:27
-msgid "Event"
-msgstr "Dogodek"
-
-#: home/models/pages.py:28
-msgid "Events"
-msgstr "Dogodki"
-
-#: home/models/pages.py:36
-msgid "Project list"
-msgstr "Seznam projektov"
-
-#: home/models/pages.py:37
-msgid "Project lists"
-msgstr "Seznami projektov"
-
-#: home/models/pages.py:44
-msgid "Project"
-msgstr "Projekt"
-
-#: home/models/pages.py:45
-msgid "Projects"
-msgstr "Projekti"
-
-#: home/models/pages.py:53
-msgid "News list"
-msgstr "Seznam novic"
-
-#: home/models/pages.py:54
-msgid "News lists"
-msgstr "Seznami novic"
-
-#: home/models/pages.py:61
-msgid "News post"
-msgstr "Novica"
-
-#: home/models/pages.py:62
-msgid "News posts"
-msgstr "Novice"
-
-#: home/models/pages.py:70 home/models/pages.py:71 home/models/settings.py:106
-msgid "About us"
-msgstr "O nas"
-
-#: home/models/pages.py:76
-msgid "Generic page"
-msgstr "Splošna stran"
-
-#: home/models/pages.py:77
-msgid "Generic pages"
-msgstr "Splošne strani"
-
-#: home/models/settings.py:23
-msgid "Logo"
-msgstr "Logotip"
-
-#: home/models/settings.py:36 home/models/settings.py:60
-#: home/models/settings.py:150
+#: home/models/custom_blocks.py:9 home/models/custom_blocks.py:25
+#: home/models/custom_blocks.py:30 home/models/custom_blocks.py:51
+#: home/models/custom_blocks.py:72 home/models/custom_blocks.py:93
+#: home/models/custom_blocks.py:118 home/models/settings.py:30
+#: home/models/settings.py:54 home/models/settings.py:144
 msgid "Title"
 msgstr "Naziv"
 
-#: home/models/settings.py:43
+#: home/models/custom_blocks.py:13
+msgid "Subtitle"
+msgstr "Podnaslov"
+
+#: home/models/custom_blocks.py:17 home/models/custom_blocks.py:101
+msgid "Description"
+msgstr "Opis"
+
+#: home/models/custom_blocks.py:21 home/models/custom_blocks.py:97
+msgid "Image"
+msgstr "Slika"
+
+#: home/models/custom_blocks.py:34 home/models/custom_blocks.py:55
+#: home/models/custom_blocks.py:76 home/models/custom_blocks.py:105
+msgid "Link text"
+msgstr "Besedilo povezave"
+
+#: home/models/custom_blocks.py:38 home/models/custom_blocks.py:59
+#: home/models/custom_blocks.py:80 home/models/settings.py:37
 msgid "Page"
 msgstr "Stran"
 
-#: home/models/settings.py:48
-msgid "Internal link"
-msgstr "Interna povezava"
+#: home/models/custom_blocks.py:41 home/models/custom_blocks.py:62
+#: home/models/custom_blocks.py:83
+msgid "Displayed items"
+msgstr "Prikazani elementi"
 
-#: home/models/settings.py:67 home/models/settings.py:126
+#: home/models/custom_blocks.py:42
+msgid "Next upcoming events."
+msgstr "Naslednji prihajajoči dogodki."
+
+#: home/models/custom_blocks.py:46
+msgid "Upcoming events"
+msgstr "Prihajajoči dogodki"
+
+#: home/models/custom_blocks.py:63
+msgid "Latest news posts."
+msgstr "Zadnje novice."
+
+#: home/models/custom_blocks.py:67
+msgid "Latest news"
+msgstr "Zadnje novice"
+
+#: home/models/custom_blocks.py:84
+msgid "Projects marked as current."
+msgstr "Projekti, ki so označeni kot aktualni."
+
+#: home/models/custom_blocks.py:88
+msgid "Current projects"
+msgstr "Aktualni projekti"
+
+#: home/models/custom_blocks.py:109 home/models/settings.py:61
+#: home/models/settings.py:120
 msgid "Link"
 msgstr "Povezava"
 
-#: home/models/settings.py:72
-msgid "External link"
-msgstr "Zunanja povezava"
+#: home/models/custom_blocks.py:113
+msgid "Promotion"
+msgstr "Promocija"
 
-#: home/models/settings.py:77
-msgid "Navigation"
-msgstr "Navigacija"
+#: home/models/custom_blocks.py:121
+msgid "More settings elsewhere"
+msgstr "Več nastavitev drugje"
 
-#: home/models/settings.py:86
-msgid "Header Settings"
-msgstr "Nastavitve glave"
+#: home/models/custom_blocks.py:122
+msgid "Newsletter signup texts are managed under Footer settings."
+msgstr "Besedila prijave na novice upravljate v nastavitvah noge."
 
-#: home/models/settings.py:119
-msgid "Platform"
-msgstr "Platforma"
-
-#: home/models/settings.py:131
-msgid "Social media link"
-msgstr "Povezava do družbenega omrežja"
-
-#: home/models/settings.py:136
-msgid "Social media links"
-msgstr "Povezave do družbenih omrežij"
-
-#: home/models/settings.py:140
-msgid "Email"
-msgstr "E-pošta"
-
-#: home/models/settings.py:145
-msgid "Phone"
-msgstr "Telefon"
-
-#: home/models/settings.py:155
-msgid "Email label"
-msgstr "Oznaka e-pošte"
-
-#: home/models/settings.py:160
-msgid "Consent label"
-msgstr "Oznaka soglasja"
-
-#: home/models/settings.py:165
-msgid "Submit text"
-msgstr "Besedilo za potrditev"
-
-#: home/models/settings.py:176
-msgid "Contact info"
-msgstr "Kontaktne informacije"
-
-#: home/models/settings.py:185
+#: home/models/custom_blocks.py:126 home/models/settings.py:179
 msgid "Newsletter signup"
 msgstr "Prijava na novice"
 
-#: home/models/settings.py:190
+#: home/models/pages.py:27
+msgid "Page body"
+msgstr "Telo strani"
+
+#: home/models/pages.py:36
+msgid "Home page"
+msgstr "Vstopna stran"
+
+#: home/models/pages.py:37
+msgid "Home pages"
+msgstr "Vstopne strani"
+
+#: home/models/pages.py:45
+msgid "Event list"
+msgstr "Seznam dogodkov"
+
+#: home/models/pages.py:46
+msgid "Event lists"
+msgstr "Seznami dogodkov"
+
+#: home/models/pages.py:53
+msgid "Event"
+msgstr "Dogodek"
+
+#: home/models/pages.py:54
+msgid "Events"
+msgstr "Dogodki"
+
+#: home/models/pages.py:62
+msgid "Project list"
+msgstr "Seznam projektov"
+
+#: home/models/pages.py:63
+msgid "Project lists"
+msgstr "Seznami projektov"
+
+#: home/models/pages.py:70
+msgid "Project"
+msgstr "Projekt"
+
+#: home/models/pages.py:71
+msgid "Projects"
+msgstr "Projekti"
+
+#: home/models/pages.py:79
+msgid "News list"
+msgstr "Seznam novic"
+
+#: home/models/pages.py:80
+msgid "News lists"
+msgstr "Seznami novic"
+
+#: home/models/pages.py:87
+msgid "News post"
+msgstr "Novica"
+
+#: home/models/pages.py:88
+msgid "News posts"
+msgstr "Novice"
+
+#: home/models/pages.py:96 home/models/pages.py:97 home/models/settings.py:100
+msgid "About us"
+msgstr "O nas"
+
+#: home/models/pages.py:102
+msgid "Generic page"
+msgstr "Splošna stran"
+
+#: home/models/pages.py:103
+msgid "Generic pages"
+msgstr "Splošne strani"
+
+#: home/models/settings.py:17
+msgid "Logo"
+msgstr "Logotip"
+
+#: home/models/settings.py:42
+msgid "Internal link"
+msgstr "Interna povezava"
+
+#: home/models/settings.py:66
+msgid "External link"
+msgstr "Zunanja povezava"
+
+#: home/models/settings.py:71
+msgid "Navigation"
+msgstr "Navigacija"
+
+#: home/models/settings.py:80
+msgid "Header Settings"
+msgstr "Nastavitve glave"
+
+#: home/models/settings.py:113
+msgid "Platform"
+msgstr "Platforma"
+
+#: home/models/settings.py:125
+msgid "Social media link"
+msgstr "Povezava do družbenega omrežja"
+
+#: home/models/settings.py:130
+msgid "Social media links"
+msgstr "Povezave do družbenih omrežij"
+
+#: home/models/settings.py:134
+msgid "Email"
+msgstr "E-pošta"
+
+#: home/models/settings.py:139
+msgid "Phone"
+msgstr "Telefon"
+
+#: home/models/settings.py:149
+msgid "Email label"
+msgstr "Oznaka e-pošte"
+
+#: home/models/settings.py:154
+msgid "Consent label"
+msgstr "Oznaka soglasja"
+
+#: home/models/settings.py:159
+msgid "Submit text"
+msgstr "Besedilo za potrditev"
+
+#: home/models/settings.py:170
+msgid "Contact info"
+msgstr "Kontaktne informacije"
+
+#: home/models/settings.py:184
 msgid "Footer Settings"
 msgstr "Nastavitve noge"
 

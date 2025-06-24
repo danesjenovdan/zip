@@ -1,13 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from wagtail import blocks
 from wagtail.admin.panels import FieldPanel, MultiFieldPanel
-from wagtail.blocks import (
-    CharBlock,
-    ChoiceBlock,
-    PageChooserBlock,
-    StructBlock,
-    URLBlock,
-)
 from wagtail.contrib.settings.models import BaseGenericSetting, register_setting
 from wagtail.fields import RichTextField, StreamField
 
@@ -26,11 +20,11 @@ class HeaderSettings(BaseGenericSetting):
         [
             (
                 "page_link",
-                StructBlock(
+                blocks.StructBlock(
                     [
                         (
                             "title",
-                            CharBlock(
+                            blocks.CharBlock(
                                 required=True,
                                 max_length=255,
                                 label=_("Title"),
@@ -38,7 +32,7 @@ class HeaderSettings(BaseGenericSetting):
                         ),
                         (
                             "page",
-                            PageChooserBlock(
+                            blocks.PageChooserBlock(
                                 required=True,
                                 label=_("Page"),
                             ),
@@ -50,11 +44,11 @@ class HeaderSettings(BaseGenericSetting):
             ),
             (
                 "external_link",
-                StructBlock(
+                blocks.StructBlock(
                     [
                         (
                             "title",
-                            CharBlock(
+                            blocks.CharBlock(
                                 required=True,
                                 max_length=255,
                                 label=_("Title"),
@@ -62,7 +56,7 @@ class HeaderSettings(BaseGenericSetting):
                         ),
                         (
                             "url",
-                            URLBlock(
+                            blocks.URLBlock(
                                 required=True,
                                 label=_("Link"),
                             ),
@@ -109,11 +103,11 @@ class FooterSettings(BaseGenericSetting):
         [
             (
                 "social_media_link",
-                StructBlock(
+                blocks.StructBlock(
                     [
                         (
                             "platform",
-                            ChoiceBlock(
+                            blocks.ChoiceBlock(
                                 required=True,
                                 choices=SocialMediaPlatforms.choices,
                                 label=_("Platform"),
@@ -121,7 +115,7 @@ class FooterSettings(BaseGenericSetting):
                         ),
                         (
                             "url",
-                            URLBlock(
+                            blocks.URLBlock(
                                 required=True,
                                 label=_("Link"),
                             ),
