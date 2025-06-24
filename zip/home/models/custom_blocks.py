@@ -1,5 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 from wagtail import blocks
+from wagtail.documents.blocks import DocumentChooserBlock
 from wagtail.images.blocks import ImageChooserBlock
 
 
@@ -124,3 +125,58 @@ class NewsletterSignupBlock(blocks.StructBlock):
 
     class Meta:
         label = _("Newsletter signup")
+
+
+class CalendarBlock(blocks.StructBlock):
+    todo = blocks.StaticBlock(
+        label="TODO",
+        admin_text="Not implemented!",
+    )
+
+    class Meta:
+        label = _("Calendar")
+
+
+class PastEventsBlock(blocks.StructBlock):
+    title = blocks.CharBlock(
+        label=_("Title"),
+    )
+
+    class Meta:
+        label = _("Past events")
+
+
+class GalleryBlock(blocks.StructBlock):
+    todo = blocks.StaticBlock(
+        label="TODO",
+        admin_text="Not implemented!",
+    )
+
+    class Meta:
+        label = _("Gallery")
+
+
+class MaterialBlock(blocks.StructBlock):
+    title = blocks.CharBlock(
+        label=_("Title"),
+    )
+    file = DocumentChooserBlock(
+        required=False,
+        label=_("File"),
+    )
+
+    class Meta:
+        label = _("Material")
+
+
+class MaterialListBlock(blocks.StructBlock):
+    title = blocks.CharBlock(
+        label=_("Title"),
+    )
+    material_list = blocks.ListBlock(
+        MaterialBlock(),
+        label=_("Material list"),
+    )
+
+    class Meta:
+        label = _("Material list")

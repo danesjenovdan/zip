@@ -1,12 +1,18 @@
+from django.db import models
 from django.utils.translation import gettext_lazy as _
+from wagtail import blocks
 from wagtail.admin.panels import FieldPanel
 from wagtail.fields import StreamField
 from wagtail.models import Page
 
 from .custom_blocks import (
+    CalendarBlock,
     CurrentProjectsBlock,
+    GalleryBlock,
     LatestNewsBlock,
+    MaterialListBlock,
     NewsletterSignupBlock,
+    PastEventsBlock,
     PromotionBlock,
     TitleBlock,
     UpcomingEventsBlock,
@@ -40,8 +46,22 @@ class HomePage(Page):
 
 
 class EventListPage(Page):
+    body = StreamField(
+        [
+            ("title_block", TitleBlock()),
+            ("calendar_block", CalendarBlock()),
+            ("past_events_block", PastEventsBlock()),
+        ],
+        blank=True,
+        verbose_name=_("Page body"),
+    )
+
     parent_page_types = ["HomePage"]
     max_count = 1
+
+    content_panels = Page.content_panels + [
+        FieldPanel("body"),
+    ]
 
     class Meta:
         verbose_name = _("Event list")
@@ -49,7 +69,50 @@ class EventListPage(Page):
 
 
 class EventPage(Page):
+    category = models.ForeignKey(
+        "EventCategory",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="events",
+        verbose_name=_("Category"),
+    )
+    start_datetime = models.DateTimeField(
+        null=True,
+        blank=True,
+        verbose_name=_("Start date and time"),
+    )
+    end_datetime = models.DateTimeField(
+        null=True,
+        blank=True,
+        verbose_name=_("End date and time"),
+    )
+    location = models.CharField(
+        max_length=255,
+        blank=True,
+        verbose_name=_("Location"),
+    )
+    body = StreamField(
+        [
+            ("rich_text_block", blocks.RichTextBlock(label=_("Text"))),
+            ("gallery_block", GalleryBlock()),
+            ("material_list_block", MaterialListBlock()),
+        ],
+        blank=True,
+        verbose_name=_("Page body"),
+    )
+    # TODO: Priznanja // Kaj je to? Link? File upload? Nekaj druga?
+    # TODO: Rezultati // Kaj je to? Link? File upload? Nekaj druga?
+
     parent_page_types = ["EventListPage"]
+
+    content_panels = Page.content_panels + [
+        FieldPanel("category"),
+        FieldPanel("start_datetime"),
+        FieldPanel("end_datetime"),
+        FieldPanel("location"),
+        FieldPanel("body"),
+    ]
 
     class Meta:
         verbose_name = _("Event")
