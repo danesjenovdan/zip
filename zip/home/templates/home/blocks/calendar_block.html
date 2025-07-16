@@ -1,0 +1,31 @@
+{% load wagtailcore_tags wagtailimages_tags zip_extras %}
+
+<div class="container {{ value|block_class_for_css_class }}">
+  <div class="no-gutter">
+    <div class="content">
+      <div class="calendar">
+        <div class="calendar__month">
+          <a class="prev" href="?month={{ previous_month|zip_date:"Y-m" }}">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#000" viewBox="0 0 11 14">
+              <path d="M0 7 10.5.94v12.12L0 7Z"/>
+            </svg>
+          </a>
+          <h2 class="calendar__title">
+            {{ current_month|zip_date:"F Y" }}
+          </h2>
+          <a class="next" href="?month={{ next_month|zip_date:"Y-m" }}">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#000" viewBox="0 0 11 14">
+              <path d="M11 7 .5 13.06V.94L11 7Z"/>
+            </svg>
+          </a>
+        </div>
+        {{ calendar|safe }}
+      </div>
+      <div class="event-list">
+        {% for event in events %}
+        {% include "home/partials/event_card.html" with event=event only %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

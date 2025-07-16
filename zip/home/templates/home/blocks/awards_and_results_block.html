@@ -1,0 +1,18 @@
+{% load static i18n wagtailcore_tags zip_extras %}
+
+<div class="container {{ value|block_class_for_css_class }}">
+  <div class="awards-results-buttons">
+    {% if value.awards_link %}
+    <a class="awards-results-buttons__awards" href="{{ value.awards_link }}">
+      {% translate "Awards" %}
+      <img src="{% static "img/awards.png" %}" alt="">
+    </a>
+    {% endif %}
+    {% if value.results_link %}
+    <a class="awards-results-buttons__results" href="{{ value.results_link }}">
+      {% translate "Results" %}
+      <img src="{% static "img/results.png" %}" alt="">
+    </a>
+    {% endif %}
+  </div>
+</div>

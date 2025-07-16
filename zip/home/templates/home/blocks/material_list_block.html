@@ -1,0 +1,21 @@
+{% load static wagtailcore_tags zip_extras %}
+
+<div class="container {{ value|block_class_for_css_class }}">
+  <div class="material-list__title">
+    <img src="{% static "img/materials.png" %}" alt="">
+    <h2 class="title">{{ value.title }}</h2>
+  </div>
+  <div class="material-list__items">
+    {% for material in value.material_list %}
+    <a href="{{ material.link }}" target="_blank" class="material-list__item">
+      <span>{{ material.title }}</span>
+      <div class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#000" viewBox="0 0 18 21">
+          <path d="M7.9 15.27c.37.4 1.08.4 1.46 0l7.54-8.2a1 1 0 0 0-.74-1.67h-3.55V1.55A1.56 1.56 0 0 0 11.06 0H6.19c-.85 0-1.54.7-1.54 1.55V5.4H1.09a1 1 0 0 0-.74 1.66l7.54 8.2Z"/>
+          <path d="M1.55 20.55H15.7c.85 0 1.55-.7 1.55-1.54v-2.77a1 1 0 1 0-2 0v2.32H2v-2.32a1 1 0 1 0-1.99 0v2.77c0 .85.7 1.54 1.55 1.54Z"/>
+        </svg>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>

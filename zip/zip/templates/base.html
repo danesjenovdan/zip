@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags wagtailuserbar %}
+{% load static wagtailcore_tags wagtailuserbar zip_extras %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +24,7 @@
         {% endif %}
 
         {# Global stylesheets #}
+        <link rel="stylesheet" type="text/css" href="{% static 'fonts/selfhosted.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/zip.css' %}">
 
         {% block extra_css %}
@@ -31,10 +32,14 @@
         {% endblock %}
     </head>
 
-    <body class="{% block body_class %}{% endblock %}">
+    <body class="{{ page|page_class_for_css_class }} {% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
+        <div class="page-content">
+            {% include "home/partials/header.html" %}
+            {% block content %}{% endblock %}
+            {% include "home/partials/footer.html" %}
+        </div>
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/zip.js' %}"></script>

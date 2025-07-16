@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static i18n wagtailcore_tags %}
+
+{% block content %}
+
+{% for block in page.body %}
+{% if block.block_type == "rich_text_block" %}
+<div class="narrow-body">
+<section>{% include_block block %}</section>
+</div>
+{% else %}
+<section>{% include_block block %}</section>
+{% endif %}
+{% endfor %}
+
+{% endblock content %}

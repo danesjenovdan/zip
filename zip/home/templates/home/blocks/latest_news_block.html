@@ -1,0 +1,20 @@
+{% load static wagtailcore_tags zip_extras %}
+
+<div class="container {{ value|block_class_for_css_class }}">
+  <div class="section-title">
+    <div class="section-icon">
+      <img src="{% static "img/section-icon-2.svg" %}" alt="">
+    </div>
+    <h2 class="title">{{ value.title }}</h2>
+    {% if value.page %}
+    <a class="link" href="{% pageurl value.page %}">
+      {{ value.link_text }}&nbsp;<img src="{% static "img/arrow.svg" %}" alt="">
+    </a>
+    {% endif %}
+  </div>
+  <div class="news-list">
+    {% for news_item in news_items %}
+    {% include "home/partials/news_item.html" with news_item=news_item only %}
+    {% endfor %}
+  </div>
+</div>

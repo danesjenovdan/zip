@@ -1,0 +1,21 @@
+{% load static wagtailsettings_tags wagtailimages_tags %}
+
+{% get_settings %}
+
+<div class="container">
+  <header class="page-header">
+    <div class="nav-logo">
+      <a href="/">
+        {% image settings.home.HeaderSettings.logo height-120 class="logo-image" %}
+      </a>
+    </div>
+    <ul role="navigation" class="nav-links">
+      {% for link in settings.home.HeaderSettings.navigation %}
+      <li class="nav-item {% if forloop.first %}active{% endif %}"><a href="{{ link.value.url }}">{{ link.value.title }}</a></li>
+      {% endfor %}
+    </ul>
+    <div class="language-selector">
+      <a href="/">EN | English</a>
+    </div>
+  </header>
+</div>

@@ -12,6 +12,14 @@ class EventCategory(models.Model):
         unique=True,
         verbose_name=_("Name"),
     )
+    image = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="+",
+        verbose_name=_("Image"),
+    )
     slug = models.SlugField(
         max_length=255,
         unique=True,
@@ -24,6 +32,7 @@ class EventCategory(models.Model):
 
     panels = [
         FieldPanel("name"),
+        FieldPanel("image"),
         FieldPanel("slug", read_only=True),
     ]
 

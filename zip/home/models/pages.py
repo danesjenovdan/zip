@@ -6,15 +6,21 @@ from wagtail.fields import StreamField
 from wagtail.models import Page
 
 from .custom_blocks import (
+    AwardsAndResultsBlock,
     CalendarBlock,
+    ColorBackgroundWithTextAndImageBlock,
     CurrentProjectsBlock,
     GalleryBlock,
     LatestNewsBlock,
     MaterialListBlock,
     NewsletterSignupBlock,
+    NewsListBlock,
     PastEventsBlock,
     PastProjectsBlock,
     PromotionBlock,
+    RelatedNewsBlock,
+    RichTextBlock,
+    TeamBlock,
     TitleBlock,
     UpcomingEventsBlock,
 )
@@ -93,17 +99,24 @@ class EventPage(Page):
         blank=True,
         verbose_name=_("Location"),
     )
+    image = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="+",
+        verbose_name=_("Image"),
+    )
     body = StreamField(
         [
-            ("rich_text_block", blocks.RichTextBlock(label=_("Text"))),
+            ("rich_text_block", RichTextBlock()),
+            ("awards_and_results_block", AwardsAndResultsBlock()),
             ("gallery_block", GalleryBlock()),
             ("material_list_block", MaterialListBlock()),
         ],
         blank=True,
         verbose_name=_("Page body"),
     )
-    # TODO: Priznanja // Kaj je to? Link? File upload? Nekaj druga?
-    # TODO: Rezultati // Kaj je to? Link? File upload? Nekaj druga?
 
     parent_page_types = ["EventListPage"]
 
@@ -112,6 +125,7 @@ class EventPage(Page):
         FieldPanel("start_datetime"),
         FieldPanel("end_datetime"),
         FieldPanel("location"),
+        FieldPanel("image"),
         FieldPanel("body"),
     ]
 
@@ -167,10 +181,10 @@ class ProjectPage(Page):
     )
     body = StreamField(
         [
-            ("rich_text_block", blocks.RichTextBlock(label=_("Text"))),
+            ("rich_text_block", RichTextBlock()),
             ("gallery_block", GalleryBlock()),
             ("material_list_block", MaterialListBlock()),
-            ("current_projects_block", CurrentProjectsBlock()),
+            ("related_news_block", RelatedNewsBlock()),
         ],
         blank=True,
         verbose_name=_("Page body"),
@@ -189,8 +203,21 @@ class ProjectPage(Page):
 
 
 class NewsListPage(Page):
+    body = StreamField(
+        [
+            ("news_list_block", NewsListBlock()),
+            ("newsletter_signup_block", NewsletterSignupBlock()),
+        ],
+        blank=True,
+        verbose_name=_("Page body"),
+    )
+
     parent_page_types = ["HomePage"]
     max_count = 1
+
+    content_panels = Page.content_panels + [
+        FieldPanel("body"),
+    ]
 
     class Meta:
         verbose_name = _("News list")
@@ -198,7 +225,44 @@ class NewsListPage(Page):
 
 
 class NewsPage(Page):
+    publish_datetime = models.DateTimeField(
+        null=True,
+        blank=True,
+        verbose_name=_("Time and date of publication"),
+    )
+    project = models.ForeignKey(
+        "home.ProjectPage",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="news",
+        verbose_name=_("Project"),
+    )
+    image = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="+",
+        verbose_name=_("Image"),
+    )
+    body = StreamField(
+        [
+            ("rich_text_block", RichTextBlock()),
+            ("gallery_block", GalleryBlock()),
+        ],
+        blank=True,
+        verbose_name=_("Page body"),
+    )
+
     parent_page_types = ["NewsListPage"]
+
+    content_panels = Page.content_panels + [
+        FieldPanel("publish_datetime"),
+        FieldPanel("project"),
+        FieldPanel("image"),
+        FieldPanel("body"),
+    ]
 
     class Meta:
         verbose_name = _("News post")
@@ -206,8 +270,26 @@ class NewsPage(Page):
 
 
 class AboutUsPage(Page):
+    body = StreamField(
+        [
+            ("title_block", TitleBlock()),
+            ("rich_text_block", RichTextBlock()),
+            (
+                "color_background_with_text_and_image_block",
+                ColorBackgroundWithTextAndImageBlock(),
+            ),
+            ("team_block", TeamBlock()),
+        ],
+        blank=True,
+        verbose_name=_("Page body"),
+    )
+
     parent_page_types = ["HomePage"]
     max_count = 1
+
+    content_panels = Page.content_panels + [
+        FieldPanel("body"),
+    ]
 
     class Meta:
         verbose_name = _("About us")
@@ -215,6 +297,26 @@ class AboutUsPage(Page):
 
 
 class GenericPage(Page):
+    body = StreamField(
+        [
+            ("title_block", TitleBlock()),
+            ("rich_text_block", RichTextBlock()),
+            (
+                "color_background_with_text_and_image_block",
+                ColorBackgroundWithTextAndImageBlock(),
+            ),
+            ("gallery_block", GalleryBlock()),
+            ("promotion_block", PromotionBlock()),
+            ("newsletter_signup_block", NewsletterSignupBlock()),
+        ],
+        blank=True,
+        verbose_name=_("Page body"),
+    )
+
+    content_panels = Page.content_panels + [
+        FieldPanel("body"),
+    ]
+
     class Meta:
         verbose_name = _("Generic page")
         verbose_name_plural = _("Generic pages")

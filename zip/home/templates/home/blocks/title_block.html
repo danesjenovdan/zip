@@ -1,0 +1,26 @@
+{% load wagtailcore_tags wagtailimages_tags zip_extras %}
+
+<div class="container {{ value|block_class_for_css_class }}">
+  <div class="no-gutter">
+    <div class="content">
+      <div class="text">
+        {% if value.title %}
+        <h1 class="title">{{ value.title }}</h1>
+        {% endif %}
+        {% if value.subtitle %}
+        <p class="subtitle">{{ value.subtitle }}</p>
+        {% endif %}
+        {% if value.description %}
+        <div class="description rich-text">
+          {{ value.description|richtext }}
+        </div>
+        {% endif %}
+      </div>
+      {% if value.image %}
+      <div class="image">
+        {% image value.image width-1400 %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
