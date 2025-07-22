@@ -1,0 +1,40 @@
+{% load static wagtailcore_tags wagtailimages_tags zip_extras %}
+
+<div class="container {{ value|block_class_for_css_class }}">
+  <div class="gallery__title">
+    <img src="{% static "img/gallery.png" %}" alt="">
+    <h2 class="title">{{ value.title }}</h2>
+  </div>
+  <div class="gallery__items">
+    <div class="gallery__image">
+      {% image value.images.0 width-1400 %}
+    </div>
+    <div class="gallery__roll">
+      <a class="prev" href="javascript:;">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#000" viewBox="0 0 11 14">
+          <path d="M0 7 10.5.94v12.12L0 7Z"/>
+        </svg>
+      </a>
+      <ul>
+        {% for image in value.images %}
+        {% image image width-1400 as large_image %}
+        <li>
+          <a href="javascript:;"
+             {% if forloop.first %}class="active"{% endif %}
+             data-large-url="{{ large_image.url }}"
+             data-width="{{ large_image.width }}"
+             data-height="{{ large_image.height }}"
+          >
+            {% image image fill-200x200 %}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      <a class="next" href="javascript:;">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#000" viewBox="0 0 11 14">
+          <path d="M11 7 .5 13.06V.94L11 7Z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>

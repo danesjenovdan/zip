@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     "home",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
+    "wagtail.contrib.settings",
     "wagtail.embeds",
     "wagtail.sites",
     "wagtail.users",
@@ -77,6 +78,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "wagtail.contrib.settings.context_processors.settings",
             ],
         },
     },
@@ -122,11 +124,22 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "sl"
 
-TIME_ZONE = "UTC"
+WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
+    ("sl", "Slovenian"),
+    ("en", "English"),
+]
+
+LOCALE_PATHS = [
+    os.path.join(PROJECT_DIR, "../locale"),
+]
+
+TIME_ZONE = "Europe/Ljubljana"
 
 USE_I18N = True
+
+WAGTAIL_I18N_ENABLED = True
 
 USE_TZ = True
 

@@ -1,0 +1,15 @@
+{% load static wagtailcore_tags wagtailimages_tags zip_extras %}
+
+<div class="container {{ value|block_class_for_css_class }}">
+  <div class="section-title">
+    <div class="section-icon">
+      <img src="{% static "img/section-icon.svg" %}" alt="">
+    </div>
+    <h2 class="title">{{ value.title }}</h2>
+  </div>
+  <div class="team-member-list">
+    {% for member in value.members %}
+    {% include "home/partials/team_member_card.html" with member=member only %}
+    {% endfor %}
+  </div>
+</div>

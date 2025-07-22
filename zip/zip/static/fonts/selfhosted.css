@@ -1,0 +1,24 @@
+/**
+  * Switzer
+  *
+  * This is a variable font
+  * You can control variable axes as shown below:
+  * font-variation-settings: wght 400.0;
+  *
+  * available axes:
+  *   - 'wght' (range from 100.0 to 900.0)
+  */
+@font-face {
+  font-family: "wf-switzer-variable";
+  src: url("./switzer/Switzer-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "wf-switzer-variable";
+  src: url("./switzer/Switzer-VariableItalic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+}

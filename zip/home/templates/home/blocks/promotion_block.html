@@ -1,0 +1,24 @@
+{% load static wagtailcore_tags wagtailimages_tags zip_extras %}
+
+<div class="container {{ value|block_class_for_css_class }}">
+  <div class="no-gutter">
+    {% if value.image %}
+    <div class="promotion__image">
+      {% image value.image fill-1072x724 %}
+    </div>
+    {% endif %}
+    <div class="promotion__content">
+      <h2 class="promotion__title">{{ value.title }}</h2>
+      {% if value.description %}
+      <div class="promotion__description rich-text">
+        {{ value.description|richtext }}
+      </div>
+      {% endif %}
+      {% if value.link_text %}
+      <a href="{{ value.url }}" class="promotion__button">
+        {{ value.link_text }}&nbsp;<img src="{% static "img/arrow-bold.svg" %}" alt="">
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</div>

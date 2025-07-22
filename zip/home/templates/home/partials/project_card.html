@@ -1,0 +1,13 @@
+{% load wagtailcore_tags wagtailimages_tags zip_extras %}
+
+<a class="project-card" href="{% pageurl project %}">
+  <div class="project-card__image">
+    {% image project.image fill-730x400 %}
+  </div>
+  <div class="project-card__content">
+    <h3 class="project-card__title">{{ project.title }}</h3>
+    {% if project.body.first_block_by_name.rich_text_block %}
+    <p class="project-card__excerpt">{{ project.body.first_block_by_name.rich_text_block|strip_tags_excerpt }}</p>
+    {% endif %}
+  </div>
+</a>

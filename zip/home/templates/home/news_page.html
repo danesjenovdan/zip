@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static i18n wagtailcore_tags %}
+
+{% block content %}
+
+{% include "home/partials/project_title.html" %}
+
+<div class="narrow-body">
+{% for block in page.body %}
+<section>{% include_block block %}</section>
+{% endfor %}
+
+<div class="back-to-archive-link">
+  <a href="{% pageurl page.get_parent %}">
+    <img src="{% static "img/arrow.svg" %}" alt=""> {% translate "Back to news archive" %}
+  </a>
+</div>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,7 @@
+{% load wagtailcore_tags zip_extras %}
+
+<div class="container {{ value|block_class_for_css_class }}">
+  <div class="rich-text">
+    {{ value|richtext }}
+  </div>
+</div>
