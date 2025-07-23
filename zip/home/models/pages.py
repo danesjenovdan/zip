@@ -40,8 +40,8 @@ class HomePage(Page):
         verbose_name=_("Page body"),
     )
 
-    parent_page_types = []
-    max_count = 1
+    parent_page_types = ["wagtailcore.Page"]
+    max_count = 2
 
     content_panels = Page.content_panels + [
         FieldPanel("body"),
