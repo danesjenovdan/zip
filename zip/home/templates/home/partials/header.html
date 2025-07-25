@@ -1,4 +1,4 @@
-{% load static wagtailsettings_tags wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailsettings_tags wagtailimages_tags %}
 
 {% get_settings %}
 
@@ -9,9 +9,14 @@
         {% image settings.home.HeaderSettings.logo height-120 class="logo-image" %}
       </a>
     </div>
+    <button type="button" id="menu-button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 649.91 483.65">
+        <path fill="#000" d="M45.34 0C20.3 0 0 20.3 0 45.34s20.3 45.34 45.34 45.34h559.23c25.04 0 45.34-20.3 45.34-45.34S629.62 0 604.57 0H45.34Zm0 196.49C20.3 196.49 0 216.79 0 241.83s20.3 45.34 45.34 45.34h559.23c25.04 0 45.34-20.3 45.34-45.34s-20.3-45.34-45.34-45.34H45.34Zm0 196.48C20.3 392.97 0 413.27 0 438.31s20.3 45.34 45.34 45.34h559.23c25.04 0 45.34-20.3 45.34-45.34s-20.3-45.34-45.34-45.34H45.34Z"/>
+      </svg>
+    </button>
     <ul role="navigation" class="nav-links">
       {% for link in settings.home.HeaderSettings.navigation %}
-      <li class="nav-item {% if forloop.first %}active{% endif %}"><a href="{{ link.value.url }}">{{ link.value.title }}</a></li>
+      <li class="nav-item {% if page.id == link.value.page.id %}active{% endif %}"><a href="{% if link.value.page %}{% pageurl link.value.page %}{% else %}{{ link.value.url }}{% endif %}" {% if link.value.url %}target="_blank"{% endif %}>{{ link.value.title }}</a></li>
       {% endfor %}
     </ul>
     <div class="language-selector">

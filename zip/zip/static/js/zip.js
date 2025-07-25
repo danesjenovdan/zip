@@ -73,7 +73,17 @@ function setupClickableNewsItems() {
   document.querySelectorAll(".js-news-item").forEach(setupClickHandler);
 }
 
+function setupMobileMenuToggle() {
+  const menuButton = document.querySelector(".page-header #menu-button");
+  const navLinks = document.querySelector(".page-header .nav-links");
+
+  menuButton.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   setupGalleries();
   setupClickableNewsItems();
+  setupMobileMenuToggle();
 });
