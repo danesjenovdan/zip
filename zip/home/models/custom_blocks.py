@@ -58,10 +58,12 @@ class UpcomingEventsBlock(blocks.StructBlock):
 
         event_parent_page = value["page"]
         if isinstance(event_parent_page, EventListPage):
+            today = timezone.now().date()
             context["events"] = (
                 EventPage.objects.child_of(event_parent_page)
                 .live()
-                .order_by("-first_published_at")[:3]
+                .filter(start_datetime__date__gte=today)
+                .order_by("start_datetime", "id")[:3]
             )
 
         return context
@@ -98,7 +100,7 @@ class LatestNewsBlock(blocks.StructBlock):
             context["news_items"] = (
                 NewsPage.objects.child_of(news_parent_page)
                 .live()
-                .order_by("-first_published_at")[:3]
+                .order_by("-publish_datetime", "id")[:3]
             )
 
         return context
@@ -310,7 +312,7 @@ class CalendarBlock(blocks.StructBlock):
                 )
             )
             .live()
-            .order_by("start_datetime")
+            .order_by("start_datetime", "id")
         )
 
         return context
@@ -404,10 +406,14 @@ class PastProjectsBlock(blocks.StructBlock):
 
         project_parent_page = context["page"]
         if isinstance(project_parent_page, ProjectListPage):
+            current_project_ids = []
+            for project in project_parent_page.current_projects:
+                current_project_ids.append(project.value.id)
             context["projects"] = (
                 ProjectPage.objects.child_of(project_parent_page)
                 .live()
-                .order_by("-first_published_at")[:3]
+                .exclude(id__in=current_project_ids)
+                .order_by("-first_published_at", "id")[:3]
             )
 
         return context
@@ -431,7 +437,7 @@ class NewsListBlock(blocks.StructBlock):
             context["news_items"] = (
                 NewsPage.objects.child_of(news_parent_page)
                 .live()
-                .order_by("-first_published_at")[:3]
+                .order_by("-publish_datetime", "id")
             )
 
         return context
