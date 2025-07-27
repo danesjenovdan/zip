@@ -520,6 +520,15 @@ class TeamBlock(blocks.StructBlock):
         label=_("Members"),
     )
 
+    def get_context(self, value, parent_context=None):
+        from .snippets import TeamPosition
+
+        context = super().get_context(value, parent_context=parent_context)
+
+        context["positions"] = TeamPosition.objects.all()
+
+        return context
+
     class Meta:
         label = _("Team")
         template = "home/blocks/team_block.html"

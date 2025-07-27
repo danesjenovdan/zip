@@ -82,8 +82,40 @@ function setupMobileMenuToggle() {
   });
 }
 
+function setupFilters() {
+  const sectionFilters = document.querySelectorAll(".section-filters");
+
+  sectionFilters.forEach((filterSection) => {
+    const filterKey = filterSection.getAttribute("data-key");
+    const filterPills = filterSection.querySelectorAll(".filter-pill");
+    const filterItems = filterSection.nextElementSibling.querySelectorAll(
+      `[data-${filterKey}]`
+    );
+
+    filterPills.forEach((filterPill) => {
+      const filterValue = filterPill.getAttribute("data-filter");
+      filterPill.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        filterPills.forEach((pill) => pill.classList.remove("active"));
+        filterPill.classList.add("active");
+
+        filterItems.forEach((item) => {
+          const itemValue = item.dataset[filterKey];
+          if (filterValue === "all" || itemValue === filterValue) {
+            item.style.display = "";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      });
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   setupGalleries();
   setupClickableNewsItems();
   setupMobileMenuToggle();
+  setupFilters();
 });

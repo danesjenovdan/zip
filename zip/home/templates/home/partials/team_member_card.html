@@ -1,6 +1,6 @@
 {% load wagtailcore_tags wagtailimages_tags zip_extras %}
 
-<div class="team-member-card">
+<div class="team-member-card" data-position="{{ member.position }}">
   <div class="team-member-card__image">
     {% image member.image fill-540x540 %}
   </div>
