@@ -1,11 +1,20 @@
-{% load wagtailcore_tags wagtailimages_tags zip_extras %}
+{% load i18n wagtailcore_tags wagtailimages_tags zip_extras %}
 
-<a class="project-card" href="{% pageurl project %}">
+<a class="project-card" href="{% pageurl project %}" data-year="{{ project.start_date|date:"Y" }}-{{ project.end_date|date:"Y" }}">
   <div class="project-card__image">
     {% image project.image fill-730x400 %}
   </div>
   <div class="project-card__content">
     <h3 class="project-card__title">{{ project.title }}</h3>
+    <div class="project-card__date">
+      {% if project.start_date and project.end_date %}
+        {% if project.start_date == project.end_date %}
+        <span>{{ project.start_date|zip_date:"SHORT_DATE_FORMAT" }}</span>
+        {% else %}
+        <span>{{ project.start_date|zip_date:"SHORT_DATE_FORMAT" }}{% translate "–" %}{{ project.end_date|zip_date:"SHORT_DATE_FORMAT" }}</span>
+        {% endif %}
+      {% endif %}
+    </div>
     {% if project.body.first_block_by_name.rich_text_block %}
     <p class="project-card__excerpt">{{ project.body.first_block_by_name.rich_text_block|strip_tags_excerpt }}</p>
     {% endif %}

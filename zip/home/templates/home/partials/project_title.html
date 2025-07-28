@@ -1,4 +1,4 @@
-{% load wagtailcore_tags wagtailimages_tags zip_extras %}
+{% load i18n wagtailcore_tags wagtailimages_tags zip_extras %}
 
 <div class="container project-title">
   <div class="no-gutter">
@@ -10,6 +10,13 @@
         {% endif %}
         {% if page.publish_datetime %}
         <div class="date">{{ page.publish_datetime.date|zip_date:"SHORT_DATE_FORMAT" }}</div>
+        {% endif %}
+        {% if page.start_date and page.end_date %}
+          {% if page.start_date == page.end_date %}
+          <div class="date">{{ page.start_date|zip_date:"SHORT_DATE_FORMAT" }}</div>
+          {% else %}
+          <div class="date">{{ page.start_date|zip_date:"SHORT_DATE_FORMAT" }}{% translate "–" %}{{ page.end_date|zip_date:"SHORT_DATE_FORMAT" }}</div>
+          {% endif %}
         {% endif %}
       </div>
       <div class="image">

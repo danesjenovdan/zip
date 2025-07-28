@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-22 23:05+0200\n"
+"POT-Creation-Date: 2025-07-28 11:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,13 +19,13 @@ msgstr ""
 "n%100==4 ? 2 : 3);\n"
 
 #: home/models/custom_blocks.py:16 home/models/custom_blocks.py:32
-#: home/models/custom_blocks.py:38 home/models/custom_blocks.py:76
-#: home/models/custom_blocks.py:113 home/models/custom_blocks.py:133
-#: home/models/custom_blocks.py:170 home/models/custom_blocks.py:196
-#: home/models/custom_blocks.py:325 home/models/custom_blocks.py:357
-#: home/models/custom_blocks.py:371 home/models/custom_blocks.py:383
-#: home/models/custom_blocks.py:397 home/models/custom_blocks.py:422
-#: home/models/custom_blocks.py:460 home/models/custom_blocks.py:510
+#: home/models/custom_blocks.py:38 home/models/custom_blocks.py:78
+#: home/models/custom_blocks.py:115 home/models/custom_blocks.py:135
+#: home/models/custom_blocks.py:172 home/models/custom_blocks.py:198
+#: home/models/custom_blocks.py:327 home/models/custom_blocks.py:359
+#: home/models/custom_blocks.py:373 home/models/custom_blocks.py:385
+#: home/models/custom_blocks.py:399 home/models/custom_blocks.py:428
+#: home/models/custom_blocks.py:466 home/models/custom_blocks.py:516
 #: home/models/settings.py:30 home/models/settings.py:54
 #: home/models/settings.py:144
 msgid "Title"
@@ -35,30 +35,30 @@ msgstr "Naziv"
 msgid "Subtitle"
 msgstr "Podnaslov"
 
-#: home/models/custom_blocks.py:24 home/models/custom_blocks.py:178
-#: home/models/custom_blocks.py:464
+#: home/models/custom_blocks.py:24 home/models/custom_blocks.py:180
+#: home/models/custom_blocks.py:470
 msgid "Description"
 msgstr "Opis"
 
-#: home/models/custom_blocks.py:28 home/models/custom_blocks.py:174
-#: home/models/custom_blocks.py:360 home/models/custom_blocks.py:476
-#: home/models/custom_blocks.py:501 home/models/pages.py:108
-#: home/models/pages.py:180 home/models/pages.py:247 home/models/snippets.py:21
+#: home/models/custom_blocks.py:28 home/models/custom_blocks.py:176
+#: home/models/custom_blocks.py:362 home/models/custom_blocks.py:482
+#: home/models/custom_blocks.py:507 home/models/pages.py:108
+#: home/models/pages.py:180 home/models/pages.py:255 home/models/snippets.py:21
 msgid "Image"
 msgstr "Slika"
 
-#: home/models/custom_blocks.py:42 home/models/custom_blocks.py:80
-#: home/models/custom_blocks.py:137 home/models/custom_blocks.py:182
+#: home/models/custom_blocks.py:42 home/models/custom_blocks.py:82
+#: home/models/custom_blocks.py:139 home/models/custom_blocks.py:184
 msgid "Link text"
 msgstr "Besedilo povezave"
 
-#: home/models/custom_blocks.py:47 home/models/custom_blocks.py:85
-#: home/models/custom_blocks.py:142 home/models/settings.py:37
+#: home/models/custom_blocks.py:47 home/models/custom_blocks.py:87
+#: home/models/custom_blocks.py:144 home/models/settings.py:37
 msgid "Page"
 msgstr "Stran"
 
-#: home/models/custom_blocks.py:50 home/models/custom_blocks.py:88
-#: home/models/custom_blocks.py:145 home/models/custom_blocks.py:270
+#: home/models/custom_blocks.py:50 home/models/custom_blocks.py:90
+#: home/models/custom_blocks.py:147 home/models/custom_blocks.py:272
 msgid "Displayed items"
 msgstr "Prikazani elementi"
 
@@ -66,175 +66,175 @@ msgstr "Prikazani elementi"
 msgid "Next upcoming events."
 msgstr "Naslednji prihajajoči dogodki."
 
-#: home/models/custom_blocks.py:70
+#: home/models/custom_blocks.py:72
 msgid "Upcoming events"
 msgstr "Prihajajoči dogodki"
 
-#: home/models/custom_blocks.py:89
+#: home/models/custom_blocks.py:91
 msgid "Latest news posts."
 msgstr "Zadnje novice."
 
-#: home/models/custom_blocks.py:107
+#: home/models/custom_blocks.py:109
 msgid "Latest news"
 msgstr "Zadnje novice"
 
-#: home/models/custom_blocks.py:127
+#: home/models/custom_blocks.py:129
 msgid "Related news"
 msgstr "Povezane novice"
 
-#: home/models/custom_blocks.py:146
+#: home/models/custom_blocks.py:148
 msgid "Projects marked as current."
 msgstr "Projekti, ki so označeni kot aktualni."
 
-#: home/models/custom_blocks.py:164 home/models/pages.py:149
+#: home/models/custom_blocks.py:166 home/models/pages.py:149
 msgid "Current projects"
 msgstr "Aktualni projekti"
 
-#: home/models/custom_blocks.py:186 home/models/custom_blocks.py:374
+#: home/models/custom_blocks.py:188 home/models/custom_blocks.py:376
 #: home/models/settings.py:61 home/models/settings.py:120
 msgid "Link"
 msgstr "Povezava"
 
-#: home/models/custom_blocks.py:190
+#: home/models/custom_blocks.py:192
 msgid "Promotion"
 msgstr "Promocija"
 
-#: home/models/custom_blocks.py:199
+#: home/models/custom_blocks.py:201
 msgid "More settings elsewhere"
 msgstr "Več nastavitev drugje"
 
-#: home/models/custom_blocks.py:200
+#: home/models/custom_blocks.py:202
 msgid "Newsletter signup texts are managed under Footer settings."
 msgstr "Besedila prijave na novice upravljate v nastavitvah noge."
 
-#: home/models/custom_blocks.py:204 home/models/settings.py:179
+#: home/models/custom_blocks.py:206 home/models/settings.py:179
 msgid "Newsletter signup"
 msgstr "Prijava na novice"
 
-#: home/models/custom_blocks.py:271
+#: home/models/custom_blocks.py:273
 msgid "Calendar of events for the current month."
 msgstr "Koledar dogodkov v trenutnem mesecu."
 
-#: home/models/custom_blocks.py:319
+#: home/models/custom_blocks.py:321
 msgid "Calendar"
 msgstr "Koledar"
 
-#: home/models/custom_blocks.py:351
+#: home/models/custom_blocks.py:353
 msgid "Past events"
 msgstr "Pretekli dogodki"
 
-#: home/models/custom_blocks.py:361
+#: home/models/custom_blocks.py:363
 msgid "Images"
 msgstr "Slike"
 
-#: home/models/custom_blocks.py:365
+#: home/models/custom_blocks.py:367
 msgid "Gallery"
 msgstr "Galerija"
 
-#: home/models/custom_blocks.py:378
+#: home/models/custom_blocks.py:380
 msgid "Material"
 msgstr "Gradivo"
 
-#: home/models/custom_blocks.py:387 home/models/custom_blocks.py:391
+#: home/models/custom_blocks.py:389 home/models/custom_blocks.py:393
 msgid "Material list"
 msgstr "Seznam gradiva"
 
-#: home/models/custom_blocks.py:416
+#: home/models/custom_blocks.py:422
 msgid "Past projects"
 msgstr "Pretekli projekti"
 
-#: home/models/custom_blocks.py:440 home/models/pages.py:223
+#: home/models/custom_blocks.py:446 home/models/pages.py:231
 msgid "News list"
 msgstr "Seznam novic"
 
-#: home/models/custom_blocks.py:447
+#: home/models/custom_blocks.py:453
 msgid "White"
 msgstr "Bela"
 
-#: home/models/custom_blocks.py:448
+#: home/models/custom_blocks.py:454
 msgid "Light Yellow"
 msgstr "Rahlo rumena"
 
-#: home/models/custom_blocks.py:449
+#: home/models/custom_blocks.py:455
 msgid "Yellow"
 msgstr "Rumena"
 
-#: home/models/custom_blocks.py:450
+#: home/models/custom_blocks.py:456
 msgid "Light Red"
 msgstr "Rahlo rdeča"
 
-#: home/models/custom_blocks.py:451
+#: home/models/custom_blocks.py:457
 msgid "Red"
 msgstr "Rdeča"
 
-#: home/models/custom_blocks.py:452
+#: home/models/custom_blocks.py:458
 msgid "Light Gray"
 msgstr "Rahlo siva"
 
-#: home/models/custom_blocks.py:453
+#: home/models/custom_blocks.py:459
 msgid "Gray"
 msgstr "Siva"
 
-#: home/models/custom_blocks.py:456
+#: home/models/custom_blocks.py:462
 msgid "Background color"
 msgstr "Barva ozadja"
 
-#: home/models/custom_blocks.py:468
+#: home/models/custom_blocks.py:474
 msgid "Left"
 msgstr "Leva"
 
-#: home/models/custom_blocks.py:469
+#: home/models/custom_blocks.py:475
 msgid "Right"
 msgstr "Desna"
 
-#: home/models/custom_blocks.py:472
+#: home/models/custom_blocks.py:478
 msgid "Image position"
 msgstr "Položaj slike"
 
-#: home/models/custom_blocks.py:480
+#: home/models/custom_blocks.py:486
 msgid "Color background with text and image"
 msgstr "Barvno ozadje z besedilom in sliko"
 
-#: home/models/custom_blocks.py:493 home/models/snippets.py:13
+#: home/models/custom_blocks.py:499 home/models/snippets.py:13
 #: home/models/snippets.py:53
 msgid "Name"
 msgstr "Ime"
 
-#: home/models/custom_blocks.py:497
+#: home/models/custom_blocks.py:503
 msgid "Position"
 msgstr "Položaj"
 
-#: home/models/custom_blocks.py:505
+#: home/models/custom_blocks.py:511
 msgid "Team member"
 msgstr "Član ekipe"
 
-#: home/models/custom_blocks.py:514
+#: home/models/custom_blocks.py:520
 msgid "Members"
 msgstr "Člani"
 
-#: home/models/custom_blocks.py:518
+#: home/models/custom_blocks.py:533
 msgid "Team"
 msgstr "Ekipa"
 
-#: home/models/custom_blocks.py:524
+#: home/models/custom_blocks.py:539
 msgid "Text"
 msgstr "Besedilo"
 
-#: home/models/custom_blocks.py:531
+#: home/models/custom_blocks.py:546
 msgid "Link to awards"
 msgstr "Povezava do priznanj"
 
-#: home/models/custom_blocks.py:535
+#: home/models/custom_blocks.py:550
 msgid "Link to results"
 msgstr "Povezava do rezultatov"
 
-#: home/models/custom_blocks.py:539
+#: home/models/custom_blocks.py:554
 msgid "Awards and results"
 msgstr "Priznanja in rezultati"
 
 #: home/models/pages.py:40 home/models/pages.py:63 home/models/pages.py:118
-#: home/models/pages.py:157 home/models/pages.py:190 home/models/pages.py:212
-#: home/models/pages.py:255 home/models/pages.py:284 home/models/pages.py:313
+#: home/models/pages.py:157 home/models/pages.py:196 home/models/pages.py:220
+#: home/models/pages.py:263 home/models/pages.py:292 home/models/pages.py:321
 msgid "Page body"
 msgstr "Telo strani"
 
@@ -278,7 +278,7 @@ msgstr "Dogodek"
 msgid "Events"
 msgstr "Dogodki"
 
-#: home/models/pages.py:144 home/models/pages.py:201 home/models/pages.py:239
+#: home/models/pages.py:144 home/models/pages.py:209 home/models/pages.py:247
 msgid "Project"
 msgstr "Projekt"
 
@@ -290,36 +290,44 @@ msgstr "Seznam projektov"
 msgid "Project lists"
 msgstr "Seznami projektov"
 
-#: home/models/pages.py:202
+#: home/models/pages.py:183
+msgid "Start date"
+msgstr "Datum začetka"
+
+#: home/models/pages.py:186
+msgid "End date"
+msgstr "Datum konca"
+
+#: home/models/pages.py:210
 msgid "Projects"
 msgstr "Projekti"
 
-#: home/models/pages.py:224
+#: home/models/pages.py:232
 msgid "News lists"
 msgstr "Seznami novic"
 
-#: home/models/pages.py:231
+#: home/models/pages.py:239
 msgid "Time and date of publication"
 msgstr "Čas objave"
 
-#: home/models/pages.py:268
+#: home/models/pages.py:276
 msgid "News post"
 msgstr "Novica"
 
-#: home/models/pages.py:269
+#: home/models/pages.py:277
 msgid "News posts"
 msgstr "Novice"
 
-#: home/models/pages.py:295 home/models/pages.py:296
+#: home/models/pages.py:303 home/models/pages.py:304
 #: home/models/settings.py:100
 msgid "About us"
 msgstr "O nas"
 
-#: home/models/pages.py:321
+#: home/models/pages.py:329
 msgid "Generic page"
 msgstr "Splošna stran"
 
-#: home/models/pages.py:322
+#: home/models/pages.py:330
 msgid "Generic pages"
 msgstr "Splošne strani"
 
@@ -423,6 +431,7 @@ msgstr "Nazaj na arhiv novic"
 #: home/templates/home/partials/event_card.html:35
 #: home/templates/home/partials/event_title.html:25
 #: home/templates/home/partials/event_title.html:38
+#: home/templates/home/partials/project_title.html:18
 msgid "–"
 msgstr "–"
 

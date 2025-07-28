@@ -87,6 +87,9 @@ function setupFilters() {
 
   sectionFilters.forEach((filterSection) => {
     const filterKey = filterSection.getAttribute("data-key");
+    const filterIsRange =
+      filterSection.hasAttribute("data-range") &&
+      filterSection.getAttribute("data-range") !== "false";
     const filterPills = filterSection.querySelectorAll(".filter-pill");
     const filterItems = filterSection.nextElementSibling.querySelectorAll(
       `[data-${filterKey}]`
@@ -102,10 +105,25 @@ function setupFilters() {
 
         filterItems.forEach((item) => {
           const itemValue = item.dataset[filterKey];
-          if (filterValue === "all" || itemValue === filterValue) {
-            item.style.display = "";
+          if (filterIsRange) {
+            const filterValueNum = Number(filterValue);
+            const itemValueNums = itemValue.split("-").map(Number);
+            if (
+              filterValue === "all" ||
+              (itemValueNums.length === 2 &&
+                itemValueNums[0] <= filterValueNum &&
+                itemValueNums[1] >= filterValueNum)
+            ) {
+              item.style.display = "";
+            } else {
+              item.style.display = "none";
+            }
           } else {
-            item.style.display = "none";
+            if (filterValue === "all" || itemValue === filterValue) {
+              item.style.display = "";
+            } else {
+              item.style.display = "none";
+            }
           }
         });
       });
