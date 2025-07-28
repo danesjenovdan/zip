@@ -179,6 +179,12 @@ class ProjectPage(Page):
         related_name="+",
         verbose_name=_("Image"),
     )
+    start_date = models.DateField(
+        verbose_name=_("Start date"),
+    )
+    end_date = models.DateField(
+        verbose_name=_("End date"),
+    )
     body = StreamField(
         [
             ("rich_text_block", RichTextBlock()),
@@ -194,6 +200,8 @@ class ProjectPage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel("image"),
+        FieldPanel("start_date"),
+        FieldPanel("end_date"),
         FieldPanel("body"),
     ]
 

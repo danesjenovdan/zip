@@ -413,8 +413,16 @@ class PastProjectsBlock(blocks.StructBlock):
                 ProjectPage.objects.child_of(project_parent_page)
                 .live()
                 .exclude(id__in=current_project_ids)
-                .order_by("-first_published_at", "id")[:3]
+                .order_by("-end_date", "id")
             )
+
+        all_projects = ProjectPage.objects.all().specific()
+        if all_projects.exists():
+            first_year = all_projects.earliest("start_date").start_date.year
+            last_year = all_projects.latest("end_date").end_date.year
+            context["years"] = list(range(last_year, first_year - 1, -1))
+        else:
+            context["years"] = []
 
         return context
 
