@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-28 11:39+0200\n"
+"POT-Creation-Date: 2025-07-31 16:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,8 +24,8 @@ msgstr ""
 #: home/models/custom_blocks.py:172 home/models/custom_blocks.py:198
 #: home/models/custom_blocks.py:327 home/models/custom_blocks.py:359
 #: home/models/custom_blocks.py:373 home/models/custom_blocks.py:385
-#: home/models/custom_blocks.py:399 home/models/custom_blocks.py:428
-#: home/models/custom_blocks.py:466 home/models/custom_blocks.py:516
+#: home/models/custom_blocks.py:399 home/models/custom_blocks.py:436
+#: home/models/custom_blocks.py:474 home/models/custom_blocks.py:524
 #: home/models/settings.py:30 home/models/settings.py:54
 #: home/models/settings.py:144
 msgid "Title"
@@ -36,13 +36,13 @@ msgid "Subtitle"
 msgstr "Podnaslov"
 
 #: home/models/custom_blocks.py:24 home/models/custom_blocks.py:180
-#: home/models/custom_blocks.py:470
+#: home/models/custom_blocks.py:478
 msgid "Description"
 msgstr "Opis"
 
 #: home/models/custom_blocks.py:28 home/models/custom_blocks.py:176
-#: home/models/custom_blocks.py:362 home/models/custom_blocks.py:482
-#: home/models/custom_blocks.py:507 home/models/pages.py:108
+#: home/models/custom_blocks.py:362 home/models/custom_blocks.py:490
+#: home/models/custom_blocks.py:515 home/models/pages.py:108
 #: home/models/pages.py:180 home/models/pages.py:255 home/models/snippets.py:21
 msgid "Image"
 msgstr "Slika"
@@ -139,96 +139,96 @@ msgstr "Gradivo"
 msgid "Material list"
 msgstr "Seznam gradiva"
 
-#: home/models/custom_blocks.py:422
+#: home/models/custom_blocks.py:430
 msgid "Past projects"
 msgstr "Pretekli projekti"
 
-#: home/models/custom_blocks.py:446 home/models/pages.py:231
+#: home/models/custom_blocks.py:454 home/models/pages.py:231
 msgid "News list"
 msgstr "Seznam novic"
 
-#: home/models/custom_blocks.py:453
+#: home/models/custom_blocks.py:461
 msgid "White"
 msgstr "Bela"
 
-#: home/models/custom_blocks.py:454
+#: home/models/custom_blocks.py:462
 msgid "Light Yellow"
 msgstr "Rahlo rumena"
 
-#: home/models/custom_blocks.py:455
+#: home/models/custom_blocks.py:463
 msgid "Yellow"
 msgstr "Rumena"
 
-#: home/models/custom_blocks.py:456
+#: home/models/custom_blocks.py:464
 msgid "Light Red"
 msgstr "Rahlo rdeča"
 
-#: home/models/custom_blocks.py:457
+#: home/models/custom_blocks.py:465
 msgid "Red"
 msgstr "Rdeča"
 
-#: home/models/custom_blocks.py:458
+#: home/models/custom_blocks.py:466
 msgid "Light Gray"
 msgstr "Rahlo siva"
 
-#: home/models/custom_blocks.py:459
+#: home/models/custom_blocks.py:467
 msgid "Gray"
 msgstr "Siva"
 
-#: home/models/custom_blocks.py:462
+#: home/models/custom_blocks.py:470
 msgid "Background color"
 msgstr "Barva ozadja"
 
-#: home/models/custom_blocks.py:474
+#: home/models/custom_blocks.py:482
 msgid "Left"
 msgstr "Leva"
 
-#: home/models/custom_blocks.py:475
+#: home/models/custom_blocks.py:483
 msgid "Right"
 msgstr "Desna"
 
-#: home/models/custom_blocks.py:478
+#: home/models/custom_blocks.py:486
 msgid "Image position"
 msgstr "Položaj slike"
 
-#: home/models/custom_blocks.py:486
+#: home/models/custom_blocks.py:494
 msgid "Color background with text and image"
 msgstr "Barvno ozadje z besedilom in sliko"
 
-#: home/models/custom_blocks.py:499 home/models/snippets.py:13
+#: home/models/custom_blocks.py:507 home/models/snippets.py:13
 #: home/models/snippets.py:53
 msgid "Name"
 msgstr "Ime"
 
-#: home/models/custom_blocks.py:503
+#: home/models/custom_blocks.py:511
 msgid "Position"
 msgstr "Položaj"
 
-#: home/models/custom_blocks.py:511
+#: home/models/custom_blocks.py:519
 msgid "Team member"
 msgstr "Član ekipe"
 
-#: home/models/custom_blocks.py:520
+#: home/models/custom_blocks.py:528
 msgid "Members"
 msgstr "Člani"
 
-#: home/models/custom_blocks.py:533
+#: home/models/custom_blocks.py:541
 msgid "Team"
 msgstr "Ekipa"
 
-#: home/models/custom_blocks.py:539
+#: home/models/custom_blocks.py:547
 msgid "Text"
 msgstr "Besedilo"
 
-#: home/models/custom_blocks.py:546
+#: home/models/custom_blocks.py:554
 msgid "Link to awards"
 msgstr "Povezava do priznanj"
 
-#: home/models/custom_blocks.py:550
+#: home/models/custom_blocks.py:558
 msgid "Link to results"
 msgstr "Povezava do rezultatov"
 
-#: home/models/custom_blocks.py:554
+#: home/models/custom_blocks.py:562
 msgid "Awards and results"
 msgstr "Priznanja in rezultati"
 
@@ -420,8 +420,8 @@ msgid "Results"
 msgstr "Rezultati"
 
 #: home/templates/home/event_page.html:16
-msgid "Back to event archive"
-msgstr "Nazaj na arhiv dogodkov"
+msgid "Back to event calendar"
+msgstr "Nazaj na koledar dogodkov"
 
 #: home/templates/home/news_page.html:15
 msgid "Back to news archive"
@@ -431,6 +431,7 @@ msgstr "Nazaj na arhiv novic"
 #: home/templates/home/partials/event_card.html:35
 #: home/templates/home/partials/event_title.html:25
 #: home/templates/home/partials/event_title.html:38
+#: home/templates/home/partials/project_card.html:14
 #: home/templates/home/partials/project_title.html:18
 msgid "–"
 msgstr "–"

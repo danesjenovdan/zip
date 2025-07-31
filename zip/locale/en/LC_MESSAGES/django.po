@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-28 11:39+0200\n"
+"POT-Creation-Date: 2025-07-31 16:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,8 +23,8 @@ msgstr ""
 #: home/models/custom_blocks.py:172 home/models/custom_blocks.py:198
 #: home/models/custom_blocks.py:327 home/models/custom_blocks.py:359
 #: home/models/custom_blocks.py:373 home/models/custom_blocks.py:385
-#: home/models/custom_blocks.py:399 home/models/custom_blocks.py:428
-#: home/models/custom_blocks.py:466 home/models/custom_blocks.py:516
+#: home/models/custom_blocks.py:399 home/models/custom_blocks.py:436
+#: home/models/custom_blocks.py:474 home/models/custom_blocks.py:524
 #: home/models/settings.py:30 home/models/settings.py:54
 #: home/models/settings.py:144
 msgid "Title"
@@ -35,13 +35,13 @@ msgid "Subtitle"
 msgstr ""
 
 #: home/models/custom_blocks.py:24 home/models/custom_blocks.py:180
-#: home/models/custom_blocks.py:470
+#: home/models/custom_blocks.py:478
 msgid "Description"
 msgstr ""
 
 #: home/models/custom_blocks.py:28 home/models/custom_blocks.py:176
-#: home/models/custom_blocks.py:362 home/models/custom_blocks.py:482
-#: home/models/custom_blocks.py:507 home/models/pages.py:108
+#: home/models/custom_blocks.py:362 home/models/custom_blocks.py:490
+#: home/models/custom_blocks.py:515 home/models/pages.py:108
 #: home/models/pages.py:180 home/models/pages.py:255 home/models/snippets.py:21
 msgid "Image"
 msgstr ""
@@ -138,96 +138,96 @@ msgstr ""
 msgid "Material list"
 msgstr ""
 
-#: home/models/custom_blocks.py:422
+#: home/models/custom_blocks.py:430
 msgid "Past projects"
 msgstr ""
 
-#: home/models/custom_blocks.py:446 home/models/pages.py:231
+#: home/models/custom_blocks.py:454 home/models/pages.py:231
 msgid "News list"
 msgstr ""
 
-#: home/models/custom_blocks.py:453
+#: home/models/custom_blocks.py:461
 msgid "White"
 msgstr ""
 
-#: home/models/custom_blocks.py:454
+#: home/models/custom_blocks.py:462
 msgid "Light Yellow"
 msgstr ""
 
-#: home/models/custom_blocks.py:455
+#: home/models/custom_blocks.py:463
 msgid "Yellow"
 msgstr ""
 
-#: home/models/custom_blocks.py:456
+#: home/models/custom_blocks.py:464
 msgid "Light Red"
 msgstr ""
 
-#: home/models/custom_blocks.py:457
+#: home/models/custom_blocks.py:465
 msgid "Red"
 msgstr ""
 
-#: home/models/custom_blocks.py:458
+#: home/models/custom_blocks.py:466
 msgid "Light Gray"
 msgstr ""
 
-#: home/models/custom_blocks.py:459
+#: home/models/custom_blocks.py:467
 msgid "Gray"
 msgstr ""
 
-#: home/models/custom_blocks.py:462
+#: home/models/custom_blocks.py:470
 msgid "Background color"
 msgstr ""
 
-#: home/models/custom_blocks.py:474
+#: home/models/custom_blocks.py:482
 msgid "Left"
 msgstr ""
 
-#: home/models/custom_blocks.py:475
+#: home/models/custom_blocks.py:483
 msgid "Right"
 msgstr ""
 
-#: home/models/custom_blocks.py:478
+#: home/models/custom_blocks.py:486
 msgid "Image position"
 msgstr ""
 
-#: home/models/custom_blocks.py:486
+#: home/models/custom_blocks.py:494
 msgid "Color background with text and image"
 msgstr ""
 
-#: home/models/custom_blocks.py:499 home/models/snippets.py:13
+#: home/models/custom_blocks.py:507 home/models/snippets.py:13
 #: home/models/snippets.py:53
 msgid "Name"
 msgstr ""
 
-#: home/models/custom_blocks.py:503
+#: home/models/custom_blocks.py:511
 msgid "Position"
 msgstr ""
 
-#: home/models/custom_blocks.py:511
+#: home/models/custom_blocks.py:519
 msgid "Team member"
 msgstr ""
 
-#: home/models/custom_blocks.py:520
+#: home/models/custom_blocks.py:528
 msgid "Members"
 msgstr ""
 
-#: home/models/custom_blocks.py:533
+#: home/models/custom_blocks.py:541
 msgid "Team"
 msgstr ""
 
-#: home/models/custom_blocks.py:539
+#: home/models/custom_blocks.py:547
 msgid "Text"
 msgstr ""
 
-#: home/models/custom_blocks.py:546
+#: home/models/custom_blocks.py:554
 msgid "Link to awards"
 msgstr ""
 
-#: home/models/custom_blocks.py:550
+#: home/models/custom_blocks.py:558
 msgid "Link to results"
 msgstr ""
 
-#: home/models/custom_blocks.py:554
+#: home/models/custom_blocks.py:562
 msgid "Awards and results"
 msgstr ""
 
@@ -419,7 +419,7 @@ msgid "Results"
 msgstr ""
 
 #: home/templates/home/event_page.html:16
-msgid "Back to event archive"
+msgid "Back to event calendar"
 msgstr ""
 
 #: home/templates/home/news_page.html:15
@@ -430,6 +430,7 @@ msgstr ""
 #: home/templates/home/partials/event_card.html:35
 #: home/templates/home/partials/event_title.html:25
 #: home/templates/home/partials/event_title.html:38
+#: home/templates/home/partials/project_card.html:14
 #: home/templates/home/partials/project_title.html:18
 msgid "–"
 msgstr ""
