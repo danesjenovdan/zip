@@ -199,22 +199,22 @@ header.page-header {
       a {
         padding: 0.25rem 1.125rem;
         border: 2px solid transparent;
+        border-radius: 9999px;
         color: var(--color-black);
         text-decoration: none;
       }
 
-      &:hover a {
-        text-decoration: underline;
-      }
-
+      &:hover a,
       &.active a {
         border-color: var(--color-black);
-        border-radius: 9999px;
-        font-weight: 700;
 
         &:hover {
           text-decoration: none;
         }
+      }
+
+      &.active a {
+        font-weight: 700;
       }
     }
   }
@@ -273,8 +273,8 @@ header.page-header {
         }
 
         .title {
-          font-size: 3.75rem;
-          font-weight: 900;
+          font-size: 2.625rem;
+          font-weight: 800;
 
           @media (max-width: 576px) {
             font-size: 2.25rem;
@@ -352,6 +352,11 @@ header.page-header {
           @media (max-width: 576px) {
             padding-block: 2rem;
           }
+
+          .title {
+            font-size: 3.75rem;
+            font-weight: 900;
+          }
         }
 
         .image {
@@ -385,6 +390,7 @@ header.page-header {
 
         .title {
           font-size: 2.625rem;
+          font-weight: 800;
 
           @media (max-width: 576px) {
             font-size: 1.75rem;
@@ -614,7 +620,8 @@ header.page-header {
     }
 
     &:hover {
-      border-bottom-color: transparent;
+      font-weight: 600;
+      background-color: var(--color-tint-2);
     }
   }
 }
@@ -727,6 +734,7 @@ header.page-header {
   .news-item__title {
     font-size: 1.75rem;
     font-weight: 800;
+    max-width: 42ch;
 
     @media (max-width: 576px) {
       font-size: 1.25rem;
@@ -760,6 +768,7 @@ header.page-header {
 
   .news-item__excerpt {
     margin-top: 1.25rem;
+    max-width: 60ch;
 
     @media (max-width: 576px) {
       margin-top: 0.75rem;
@@ -768,6 +777,7 @@ header.page-header {
 
   &:hover {
     background-color: var(--color-tint-5);
+    box-shadow: 0 0 0 1px var(--color-black);
 
     .news-item__title {
       text-decoration: underline;
@@ -823,6 +833,7 @@ header.page-header {
 
       .promotion__title {
         font-size: 2.625rem;
+        font-weight: 800;
 
         @media (max-width: 576px) {
           font-size: 1.75rem;
@@ -872,6 +883,11 @@ header.page-header {
     height: 0.75rem;
     width: auto;
     margin-left: 0.75rem;
+  }
+
+  &:hover {
+    background-color: var(--color-accent-2);
+    box-shadow: 0 0 0 2px var(--color-black);
   }
 }
 
@@ -993,6 +1009,7 @@ header.page-header {
 
       .newsletter__title {
         font-size: 2.625rem;
+        font-weight: 800;
         margin-left: 4.5rem;
         margin-top: 4.5rem;
 
@@ -1081,6 +1098,13 @@ header.page-header {
 
     .footer-col {
       flex-basis: 33%;
+
+      @media (max-width: 576px) {
+        &:not(:last-child) {
+          padding-bottom: 2rem;
+          border-bottom: 1px solid var(--color-black);
+        }
+      }
 
       .rich-text b {
         font-weight: 600;
@@ -1181,6 +1205,7 @@ header.page-header {
     .project-card__image,
     .project-card__content {
       background-color: var(--color-tint-5);
+      box-shadow: 0 0 0 1px var(--color-black);
 
       .project-card__title {
         text-decoration: underline;
@@ -1209,6 +1234,7 @@ header.page-header {
 
     .project-card__title {
       font-size: 1.75rem;
+      font-weight: 800;
 
       @media (max-width: 576px) {
         font-size: 1.25rem;
@@ -1305,6 +1331,7 @@ header.page-header {
   &:hover {
     .event-card__content {
       background-color: var(--color-tint-2);
+      box-shadow: 0 0 0 1px var(--color-black);
 
       .event-card__title {
         text-decoration: underline;
@@ -1353,7 +1380,7 @@ header.page-header {
       gap: 1rem;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 1rem 1rem 4rem;
+      padding: 0.75rem 0.75rem 0.75rem 1.5rem;
       background-color: var(--color-tint-1);
       border: 1px solid var(--color-black);
       border-radius: 0.625rem;
@@ -1467,6 +1494,10 @@ header.page-header {
         svg {
           width: 100%;
           height: 100%;
+        }
+
+        &:hover {
+          background-color: var(--color-tint-2);
         }
       }
 
@@ -1702,6 +1733,10 @@ header.page-header {
               width: 100%;
               height: 100%;
             }
+
+            &:hover {
+              background-color: var(--color-tint-2);
+            }
           }
 
           .calendar__title {
@@ -1893,7 +1928,7 @@ header.page-header {
     border-radius: 9999px;
     font-size: 1.125rem;
     font-weight: 500;
-    line-height: 1.25rem;
+    line-height: 1;
 
     svg {
       display: none;
