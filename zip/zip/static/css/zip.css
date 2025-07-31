@@ -1923,13 +1923,13 @@ header.page-header {
     display: inline-flex;
     gap: 0.5rem;
     align-items: center;
-    padding: 0.25rem 1.4375rem;
+    padding: 0 1.4375rem;
     background: transparent;
     border: 1px solid var(--color-black);
     border-radius: 9999px;
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1;
+    line-height: 1.75rem;
 
     svg {
       display: none;
@@ -1947,6 +1947,41 @@ header.page-header {
       svg {
         display: block;
       }
+    }
+  }
+
+  .filters-left,
+  .filters-right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+  }
+
+  .filters-right {
+    margin-left: auto;
+  }
+
+  .filter-select {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+
+    select {
+      position: relative;
+      appearance: none;
+      padding-block: 0;
+      padding-left: 0.875rem;
+      padding-right: 3.5rem;
+      background: var(--color-tint-3);
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="%23000" viewBox="0 0 14 11"><path d="M7 11 .9378.5h12.1244L7 11Z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      background-size: 0.875rem 0.875rem;
+      border: 1px solid var(--color-black);
+      border-radius: 9999px;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.75rem;
     }
   }
 }

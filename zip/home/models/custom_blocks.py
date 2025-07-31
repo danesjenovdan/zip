@@ -329,6 +329,7 @@ class PastEventsBlock(blocks.StructBlock):
 
     def get_context(self, value, parent_context=None):
         from .pages import EventListPage, EventPage
+        from .snippets import EventCategory
 
         context = super().get_context(value, parent_context=parent_context)
 
@@ -362,6 +363,8 @@ class PastEventsBlock(blocks.StructBlock):
             context["years"] = list(range(last_year, first_year - 1, -1))
         else:
             context["years"] = []
+
+        context["categories"] = EventCategory.objects.all().order_by("name")
 
         return context
 

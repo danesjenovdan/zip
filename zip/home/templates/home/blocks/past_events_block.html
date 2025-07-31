@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags wagtailimages_tags zip_extras %}
+{% load static i18n wagtailcore_tags wagtailimages_tags zip_extras %}
 
 <div class="container {{ value|block_class_for_css_class }}">
   <div class="section-title">
@@ -12,21 +12,34 @@
     </a>
     {% endif %}
   </div>
-  <div class="section-filters" data-key="year" data-range="true">
-    <button class="filter-pill active" data-filter="all">
-      <span>Vsi</span>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="#000" viewBox="0 0 20 20">
-        <path d="M10 0C4.4774 0 0 4.4774 0 10s4.4774 10 10 10 10-4.4774 10-10S15.5226 0 10 0Zm3.75 5.7422L15.5078 7.5 8.75 14.2578 4.4922 10 6.25 8.2422l2.5 2.5 5-5Z"/>
-      </svg>
-    </button>
-    {% for year in years %}
-    <button class="filter-pill" data-filter="{{ year }}">
-      <span>{{ year }}</span>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="#000" viewBox="0 0 20 20">
-        <path d="M10 0C4.4774 0 0 4.4774 0 10s4.4774 10 10 10 10-4.4774 10-10S15.5226 0 10 0Zm3.75 5.7422L15.5078 7.5 8.75 14.2578 4.4922 10 6.25 8.2422l2.5 2.5 5-5Z"/>
-      </svg>
-    </button>
-    {% endfor %}
+  <div class="section-filters">
+    <div class="filters-left" data-key="year" data-range="true">
+      <button class="filter-pill active" data-filter="all">
+        <span>{% translate "All" %}</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#000" viewBox="0 0 20 20">
+          <path d="M10 0C4.4774 0 0 4.4774 0 10s4.4774 10 10 10 10-4.4774 10-10S15.5226 0 10 0Zm3.75 5.7422L15.5078 7.5 8.75 14.2578 4.4922 10 6.25 8.2422l2.5 2.5 5-5Z"/>
+        </svg>
+      </button>
+      {% for year in years %}
+      <button class="filter-pill" data-filter="{{ year }}">
+        <span>{{ year }}</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#000" viewBox="0 0 20 20">
+          <path d="M10 0C4.4774 0 0 4.4774 0 10s4.4774 10 10 10 10-4.4774 10-10S15.5226 0 10 0Zm3.75 5.7422L15.5078 7.5 8.75 14.2578 4.4922 10 6.25 8.2422l2.5 2.5 5-5Z"/>
+        </svg>
+      </button>
+      {% endfor %}
+    </div>
+    <div class="filters-right" data-key="category">
+      <label class="filter-select">
+        <span>{% translate "Show only" %}</span>
+        <select>
+          <option value="all" selected disabled data-all-text="{% translate "All categories" %}" data-select-text="{% translate "Select category" %}"></option>
+          {% for category in categories %}
+          <option value="{{ category.slug }}">{{ category.name }}</option>
+          {% endfor %}
+        </select>
+      </label>
+    </div>
   </div>
   <div class="event-list">
     {% for event in events %}
