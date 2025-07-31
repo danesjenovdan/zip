@@ -347,6 +347,22 @@ class PastEventsBlock(blocks.StructBlock):
                 .order_by("-start_datetime", "id")
             )
 
+        all_events = EventPage.objects.all().specific()
+        if all_events.exists():
+            first_year = (
+                all_events.filter(start_datetime__isnull=False)
+                .earliest("start_datetime")
+                .start_datetime.year
+            )
+            last_year = (
+                all_events.filter(end_datetime__isnull=False)
+                .latest("end_datetime")
+                .end_datetime.year
+            )
+            context["years"] = list(range(last_year, first_year - 1, -1))
+        else:
+            context["years"] = []
+
         return context
 
     class Meta:
@@ -418,8 +434,16 @@ class PastProjectsBlock(blocks.StructBlock):
 
         all_projects = ProjectPage.objects.all().specific()
         if all_projects.exists():
-            first_year = all_projects.earliest("start_date").start_date.year
-            last_year = all_projects.latest("end_date").end_date.year
+            first_year = (
+                all_projects.filter(start_date__isnull=False)
+                .earliest("start_date")
+                .start_date.year
+            )
+            last_year = (
+                all_projects.filter(end_date__isnull=False)
+                .latest("end_date")
+                .end_date.year
+            )
             context["years"] = list(range(last_year, first_year - 1, -1))
         else:
             context["years"] = []
