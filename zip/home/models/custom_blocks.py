@@ -329,6 +329,7 @@ class PastEventsBlock(blocks.StructBlock):
 
     def get_context(self, value, parent_context=None):
         from .pages import EventListPage, EventPage
+        from .snippets import EventCategory
 
         context = super().get_context(value, parent_context=parent_context)
 
@@ -346,6 +347,24 @@ class PastEventsBlock(blocks.StructBlock):
                 .live()
                 .order_by("-start_datetime", "id")
             )
+
+        all_events = EventPage.objects.all().specific()
+        if all_events.exists():
+            first_year = (
+                all_events.filter(start_datetime__isnull=False)
+                .earliest("start_datetime")
+                .start_datetime.year
+            )
+            last_year = (
+                all_events.filter(end_datetime__isnull=False)
+                .latest("end_datetime")
+                .end_datetime.year
+            )
+            context["years"] = list(range(last_year, first_year - 1, -1))
+        else:
+            context["years"] = []
+
+        context["categories"] = EventCategory.objects.all().order_by("name")
 
         return context
 
@@ -418,8 +437,16 @@ class PastProjectsBlock(blocks.StructBlock):
 
         all_projects = ProjectPage.objects.all().specific()
         if all_projects.exists():
-            first_year = all_projects.earliest("start_date").start_date.year
-            last_year = all_projects.latest("end_date").end_date.year
+            first_year = (
+                all_projects.filter(start_date__isnull=False)
+                .earliest("start_date")
+                .start_date.year
+            )
+            last_year = (
+                all_projects.filter(end_date__isnull=False)
+                .latest("end_date")
+                .end_date.year
+            )
             context["years"] = list(range(last_year, first_year - 1, -1))
         else:
             context["years"] = []

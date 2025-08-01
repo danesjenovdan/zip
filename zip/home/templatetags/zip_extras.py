@@ -1,4 +1,5 @@
 from django import template
+from django.conf import settings
 from django.template.defaultfilters import date as date_filter
 from django.utils.html import strip_tags
 from django.utils.text import Truncator
@@ -80,3 +81,25 @@ def zip_date(value, arg=None):
     if formatter:
         return date_filter(value, formatter)
     return date_filter(value, arg)
+
+
+@register.filter
+def generate_event_calendar_options(page):
+    options = {
+        "name": page.title,
+        "uid": str(page.uuid),
+        "description": f"[url]{page.full_url}[/url]",
+        "timeZone": settings.TIME_ZONE,
+    }
+
+    if page.location:
+        options["location"] = page.location
+
+    if page.start_datetime:
+        options["startDate"] = page.start_datetime.date().strftime("%Y-%m-%d")
+        options["startTime"] = page.start_datetime.time().strftime("%H:%M")
+    if page.end_datetime:
+        options["endDate"] = page.end_datetime.date().strftime("%Y-%m-%d")
+        options["endTime"] = page.end_datetime.time().strftime("%H:%M")
+
+    return options

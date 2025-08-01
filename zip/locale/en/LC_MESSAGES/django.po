@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-28 11:39+0200\n"
+"POT-Creation-Date: 2025-08-01 13:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,10 +21,10 @@ msgstr ""
 #: home/models/custom_blocks.py:38 home/models/custom_blocks.py:78
 #: home/models/custom_blocks.py:115 home/models/custom_blocks.py:135
 #: home/models/custom_blocks.py:172 home/models/custom_blocks.py:198
-#: home/models/custom_blocks.py:327 home/models/custom_blocks.py:359
-#: home/models/custom_blocks.py:373 home/models/custom_blocks.py:385
-#: home/models/custom_blocks.py:399 home/models/custom_blocks.py:428
-#: home/models/custom_blocks.py:466 home/models/custom_blocks.py:516
+#: home/models/custom_blocks.py:327 home/models/custom_blocks.py:378
+#: home/models/custom_blocks.py:392 home/models/custom_blocks.py:404
+#: home/models/custom_blocks.py:418 home/models/custom_blocks.py:463
+#: home/models/custom_blocks.py:501 home/models/custom_blocks.py:551
 #: home/models/settings.py:30 home/models/settings.py:54
 #: home/models/settings.py:144
 msgid "Title"
@@ -35,14 +35,14 @@ msgid "Subtitle"
 msgstr ""
 
 #: home/models/custom_blocks.py:24 home/models/custom_blocks.py:180
-#: home/models/custom_blocks.py:470
+#: home/models/custom_blocks.py:505
 msgid "Description"
 msgstr ""
 
 #: home/models/custom_blocks.py:28 home/models/custom_blocks.py:176
-#: home/models/custom_blocks.py:362 home/models/custom_blocks.py:482
-#: home/models/custom_blocks.py:507 home/models/pages.py:108
-#: home/models/pages.py:180 home/models/pages.py:255 home/models/snippets.py:21
+#: home/models/custom_blocks.py:381 home/models/custom_blocks.py:517
+#: home/models/custom_blocks.py:542 home/models/pages.py:110
+#: home/models/pages.py:188 home/models/pages.py:263 home/models/snippets.py:21
 msgid "Image"
 msgstr ""
 
@@ -85,11 +85,11 @@ msgstr ""
 msgid "Projects marked as current."
 msgstr ""
 
-#: home/models/custom_blocks.py:166 home/models/pages.py:149
+#: home/models/custom_blocks.py:166 home/models/pages.py:157
 msgid "Current projects"
 msgstr ""
 
-#: home/models/custom_blocks.py:188 home/models/custom_blocks.py:376
+#: home/models/custom_blocks.py:188 home/models/custom_blocks.py:395
 #: home/models/settings.py:61 home/models/settings.py:120
 msgid "Link"
 msgstr ""
@@ -118,215 +118,219 @@ msgstr ""
 msgid "Calendar"
 msgstr ""
 
-#: home/models/custom_blocks.py:353
+#: home/models/custom_blocks.py:372
 msgid "Past events"
 msgstr ""
 
-#: home/models/custom_blocks.py:363
+#: home/models/custom_blocks.py:382
 msgid "Images"
 msgstr ""
 
-#: home/models/custom_blocks.py:367
+#: home/models/custom_blocks.py:386
 msgid "Gallery"
 msgstr ""
 
-#: home/models/custom_blocks.py:380
+#: home/models/custom_blocks.py:399
 msgid "Material"
 msgstr ""
 
-#: home/models/custom_blocks.py:389 home/models/custom_blocks.py:393
+#: home/models/custom_blocks.py:408 home/models/custom_blocks.py:412
 msgid "Material list"
 msgstr ""
 
-#: home/models/custom_blocks.py:422
+#: home/models/custom_blocks.py:457
 msgid "Past projects"
 msgstr ""
 
-#: home/models/custom_blocks.py:446 home/models/pages.py:231
+#: home/models/custom_blocks.py:481 home/models/pages.py:239
 msgid "News list"
 msgstr ""
 
-#: home/models/custom_blocks.py:453
+#: home/models/custom_blocks.py:488
 msgid "White"
 msgstr ""
 
-#: home/models/custom_blocks.py:454
+#: home/models/custom_blocks.py:489
 msgid "Light Yellow"
 msgstr ""
 
-#: home/models/custom_blocks.py:455
+#: home/models/custom_blocks.py:490
 msgid "Yellow"
 msgstr ""
 
-#: home/models/custom_blocks.py:456
+#: home/models/custom_blocks.py:491
 msgid "Light Red"
 msgstr ""
 
-#: home/models/custom_blocks.py:457
+#: home/models/custom_blocks.py:492
 msgid "Red"
 msgstr ""
 
-#: home/models/custom_blocks.py:458
+#: home/models/custom_blocks.py:493
 msgid "Light Gray"
 msgstr ""
 
-#: home/models/custom_blocks.py:459
+#: home/models/custom_blocks.py:494
 msgid "Gray"
 msgstr ""
 
-#: home/models/custom_blocks.py:462
+#: home/models/custom_blocks.py:497
 msgid "Background color"
 msgstr ""
 
-#: home/models/custom_blocks.py:474
+#: home/models/custom_blocks.py:509
 msgid "Left"
 msgstr ""
 
-#: home/models/custom_blocks.py:475
+#: home/models/custom_blocks.py:510
 msgid "Right"
 msgstr ""
 
-#: home/models/custom_blocks.py:478
+#: home/models/custom_blocks.py:513
 msgid "Image position"
 msgstr ""
 
-#: home/models/custom_blocks.py:486
+#: home/models/custom_blocks.py:521
 msgid "Color background with text and image"
 msgstr ""
 
-#: home/models/custom_blocks.py:499 home/models/snippets.py:13
+#: home/models/custom_blocks.py:534 home/models/snippets.py:13
 #: home/models/snippets.py:53
 msgid "Name"
 msgstr ""
 
-#: home/models/custom_blocks.py:503
+#: home/models/custom_blocks.py:538
 msgid "Position"
 msgstr ""
 
-#: home/models/custom_blocks.py:511
+#: home/models/custom_blocks.py:546
 msgid "Team member"
 msgstr ""
 
-#: home/models/custom_blocks.py:520
+#: home/models/custom_blocks.py:555
 msgid "Members"
 msgstr ""
 
-#: home/models/custom_blocks.py:533
+#: home/models/custom_blocks.py:568
 msgid "Team"
 msgstr ""
 
-#: home/models/custom_blocks.py:539
+#: home/models/custom_blocks.py:574
 msgid "Text"
 msgstr ""
 
-#: home/models/custom_blocks.py:546
+#: home/models/custom_blocks.py:581
 msgid "Link to awards"
 msgstr ""
 
-#: home/models/custom_blocks.py:550
+#: home/models/custom_blocks.py:585
 msgid "Link to results"
 msgstr ""
 
-#: home/models/custom_blocks.py:554
+#: home/models/custom_blocks.py:589
 msgid "Awards and results"
 msgstr ""
 
-#: home/models/pages.py:40 home/models/pages.py:63 home/models/pages.py:118
-#: home/models/pages.py:157 home/models/pages.py:196 home/models/pages.py:220
-#: home/models/pages.py:263 home/models/pages.py:292 home/models/pages.py:321
+#: home/models/pages.py:42 home/models/pages.py:65 home/models/pages.py:120
+#: home/models/pages.py:165 home/models/pages.py:204 home/models/pages.py:228
+#: home/models/pages.py:271 home/models/pages.py:300 home/models/pages.py:329
 msgid "Page body"
 msgstr ""
 
-#: home/models/pages.py:51
+#: home/models/pages.py:53
 msgid "Home page"
 msgstr ""
 
-#: home/models/pages.py:52
+#: home/models/pages.py:54
 msgid "Home pages"
 msgstr ""
 
-#: home/models/pages.py:74
+#: home/models/pages.py:76
 msgid "Event list"
 msgstr ""
 
-#: home/models/pages.py:75
+#: home/models/pages.py:77
 msgid "Event lists"
 msgstr ""
 
-#: home/models/pages.py:85
+#: home/models/pages.py:87
 msgid "Category"
 msgstr ""
 
-#: home/models/pages.py:90
+#: home/models/pages.py:92
 msgid "Start date and time"
 msgstr ""
 
-#: home/models/pages.py:95
+#: home/models/pages.py:97
 msgid "End date and time"
 msgstr ""
 
-#: home/models/pages.py:100
+#: home/models/pages.py:102
 msgid "Location"
 msgstr ""
 
-#: home/models/pages.py:133
+#: home/models/pages.py:126
+msgid "Unique ID (for calendar)"
+msgstr ""
+
+#: home/models/pages.py:141
 msgid "Event"
 msgstr ""
 
-#: home/models/pages.py:134
+#: home/models/pages.py:142
 msgid "Events"
 msgstr ""
 
-#: home/models/pages.py:144 home/models/pages.py:209 home/models/pages.py:247
+#: home/models/pages.py:152 home/models/pages.py:217 home/models/pages.py:255
 msgid "Project"
 msgstr ""
 
-#: home/models/pages.py:169
+#: home/models/pages.py:177
 msgid "Project list"
 msgstr ""
 
-#: home/models/pages.py:170
+#: home/models/pages.py:178
 msgid "Project lists"
 msgstr ""
 
-#: home/models/pages.py:183
+#: home/models/pages.py:191
 msgid "Start date"
 msgstr ""
 
-#: home/models/pages.py:186
+#: home/models/pages.py:194
 msgid "End date"
 msgstr ""
 
-#: home/models/pages.py:210
+#: home/models/pages.py:218
 msgid "Projects"
 msgstr ""
 
-#: home/models/pages.py:232
+#: home/models/pages.py:240
 msgid "News lists"
 msgstr ""
 
-#: home/models/pages.py:239
+#: home/models/pages.py:247
 msgid "Time and date of publication"
 msgstr ""
 
-#: home/models/pages.py:276
+#: home/models/pages.py:284
 msgid "News post"
 msgstr ""
 
-#: home/models/pages.py:277
+#: home/models/pages.py:285
 msgid "News posts"
 msgstr ""
 
-#: home/models/pages.py:303 home/models/pages.py:304
+#: home/models/pages.py:311 home/models/pages.py:312
 #: home/models/settings.py:100
 msgid "About us"
 msgstr ""
 
-#: home/models/pages.py:329
+#: home/models/pages.py:337
 msgid "Generic page"
 msgstr ""
 
-#: home/models/pages.py:330
+#: home/models/pages.py:338
 msgid "Generic pages"
 msgstr ""
 
@@ -418,8 +422,25 @@ msgstr ""
 msgid "Results"
 msgstr ""
 
+#: home/templates/home/blocks/past_events_block.html:18
+#: home/templates/home/blocks/past_projects_block.html:17
+msgid "All"
+msgstr ""
+
+#: home/templates/home/blocks/past_events_block.html:34
+msgid "Show only"
+msgstr ""
+
+#: home/templates/home/blocks/past_events_block.html:36
+msgid "All categories"
+msgstr ""
+
+#: home/templates/home/blocks/past_events_block.html:36
+msgid "Select category"
+msgstr ""
+
 #: home/templates/home/event_page.html:16
-msgid "Back to event archive"
+msgid "Back to event calendar"
 msgstr ""
 
 #: home/templates/home/news_page.html:15
@@ -430,8 +451,13 @@ msgstr ""
 #: home/templates/home/partials/event_card.html:35
 #: home/templates/home/partials/event_title.html:25
 #: home/templates/home/partials/event_title.html:38
+#: home/templates/home/partials/project_card.html:14
 #: home/templates/home/partials/project_title.html:18
 msgid "–"
+msgstr ""
+
+#: home/templates/home/partials/event_title.html:67
+msgid "Add to calendar"
 msgstr ""
 
 #: home/templates/home/project_page.html:15

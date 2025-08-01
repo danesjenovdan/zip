@@ -1,6 +1,6 @@
 {% load static i18n wagtailcore_tags wagtailimages_tags zip_extras %}
 
-<a class="event-card" href="{% pageurl event %}">
+<a class="event-card" href="{% pageurl event %}" data-year="{{ event.start_datetime|date:"Y" }}-{{ event.end_datetime|date:"Y" }}" data-category="{{ event.category.slug }}">
   {% if event.category %}
   <div class="event-card__category">
     <div class="category-tag">

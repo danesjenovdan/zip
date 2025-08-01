@@ -1,4 +1,4 @@
-{% load i18n wagtailimages_tags zip_extras %}
+{% load static i18n jsonify wagtailimages_tags zip_extras %}
 
 <div class="container event-title">
   <div class="no-gutter">
@@ -59,9 +59,16 @@
           <span>{{ page.location }}</span>
         </div>
         {% endif %}
-        {% comment %} <div>
-          todo: add to calendar button
-        </div> {% endcomment %}
+        {% if page.start_datetime %}
+        <button type="button" class="event-title__add-to-calendar" id="add-to-calendar">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="#000" viewBox="0 0 22 22">
+            <path d="M18.3838 3.6161C16.3447 1.5771 13.6717.5576 10.9987.5576c-2.6719 0-5.3448 1.0195-7.3839 3.0585-4.0782 4.0782-4.0782 10.6911 0 14.769 2.039 2.0391 4.7121 3.0585 7.3839 3.0585 2.6731 0 5.346-1.0195 7.3851-3.0585 4.0782-4.0794 4.0782-10.691 0-14.769Zm-1.6406 8.4282H12.044v4.6992H9.9557v-4.6992H5.2565V9.956h4.6992V5.257h2.0883v4.699h4.6992v2.0883Z"/>
+          </svg>
+          <span>{% translate "Add to calendar" %}</span>
+        </button>
+        <script>window.__EVENT_CALENDAR_OPTIONS__ = JSON.parse("{{ page|generate_event_calendar_options|jsonify|escapejs }}");</script>
+        <script type="module" src="{% static 'js/add_to_calendar.js' %}"></script>
+        {% endif %}
       </div>
       <div class="image">
         {% image page.image fill-730x400 %}

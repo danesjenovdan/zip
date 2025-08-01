@@ -86,23 +86,23 @@ function setupFilters() {
   const sectionFilters = document.querySelectorAll(".section-filters");
 
   sectionFilters.forEach((filterSection) => {
-    const filterKey = filterSection.getAttribute("data-key");
-    const filterIsRange =
-      filterSection.hasAttribute("data-range") &&
-      filterSection.getAttribute("data-range") !== "false";
-    const filterPills = filterSection.querySelectorAll(".filter-pill");
-    const filterItems = filterSection.nextElementSibling.querySelectorAll(
-      `[data-${filterKey}]`
-    );
+    const filterParents = filterSection.hasAttribute("data-key")
+      ? [filterSection]
+      : filterSection.querySelectorAll("[data-key]");
+    if (filterParents.length === 0) return;
 
-    filterPills.forEach((filterPill) => {
-      const filterValue = filterPill.getAttribute("data-filter");
-      filterPill.addEventListener("click", (event) => {
-        event.preventDefault();
+    filterParents.forEach((filterParent) => {
+      const filterKey = filterParent.getAttribute("data-key");
+      const filterIsRange =
+        filterParent.hasAttribute("data-range") &&
+        filterParent.getAttribute("data-range") !== "false";
+      const filterPills = filterParent.querySelectorAll(".filter-pill");
+      const filterSelect = filterParent.querySelector("select");
+      const filterItems = filterSection.nextElementSibling.querySelectorAll(
+        `[data-${filterKey}]`
+      );
 
-        filterPills.forEach((pill) => pill.classList.remove("active"));
-        filterPill.classList.add("active");
-
+      const updateItemsDisplay = (filterValue) => {
         filterItems.forEach((item) => {
           const itemValue = item.dataset[filterKey];
           if (filterIsRange) {
@@ -126,7 +126,53 @@ function setupFilters() {
             }
           }
         });
-      });
+      };
+
+      if (filterPills.length) {
+        filterPills.forEach((filterPill) => {
+          const filterValue = filterPill.getAttribute("data-filter");
+          filterPill.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            filterPills.forEach((pill) => pill.classList.remove("active"));
+            filterPill.classList.add("active");
+
+            updateItemsDisplay(filterValue);
+          });
+        });
+      }
+
+      if (filterSelect) {
+        const allOption = filterSelect.querySelector("option[value='all']");
+
+        let selectedValue = (() => {
+          const opt = filterSelect.querySelector("option:checked");
+          return opt ? opt.value : "all";
+        })();
+
+        const updateAllOptionText = () => {
+          if (allOption) {
+            if (selectedValue === "all") {
+              allOption.setAttribute("disabled", "disabled");
+              allOption.textContent = allOption.dataset.selectText;
+            } else {
+              allOption.removeAttribute("disabled");
+              allOption.textContent = allOption.dataset.allText;
+            }
+          }
+        };
+        updateAllOptionText();
+        updateItemsDisplay(selectedValue);
+
+        filterSelect.addEventListener("change", (event) => {
+          if (selectedValue !== event.target.value) {
+            selectedValue = event.target.value;
+          }
+          updateAllOptionText();
+
+          updateItemsDisplay(selectedValue);
+        });
+      }
     });
   });
 }
