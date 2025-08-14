@@ -350,17 +350,26 @@ class PastEventsBlock(blocks.StructBlock):
 
         all_events = EventPage.objects.all().specific()
         if all_events.exists():
-            first_year = (
+            first_event = (
                 all_events.filter(start_datetime__isnull=False)
-                .earliest("start_datetime")
-                .start_datetime.year
+                .order_by("start_datetime")
+                .first()
             )
-            last_year = (
+            last_event = (
                 all_events.filter(end_datetime__isnull=False)
-                .latest("end_datetime")
-                .end_datetime.year
+                .order_by("end_datetime")
+                .last()
             )
-            context["years"] = list(range(last_year, first_year - 1, -1))
+            first_year = first_event.start_datetime.year if first_event else None
+            last_year = last_event.end_datetime.year if last_event else None
+            if first_year and last_year:
+                context["years"] = list(range(last_year, first_year - 1, -1))
+            elif first_year:
+                context["years"] = [first_year]
+            elif last_year:
+                context["years"] = [last_year]
+            else:
+                context["years"] = []
         else:
             context["years"] = []
 
@@ -437,17 +446,24 @@ class PastProjectsBlock(blocks.StructBlock):
 
         all_projects = ProjectPage.objects.all().specific()
         if all_projects.exists():
-            first_year = (
+            first_project = (
                 all_projects.filter(start_date__isnull=False)
-                .earliest("start_date")
-                .start_date.year
+                .order_by("start_date")
+                .first()
             )
-            last_year = (
-                all_projects.filter(end_date__isnull=False)
-                .latest("end_date")
-                .end_date.year
+            last_project = (
+                all_projects.filter(end_date__isnull=False).order_by("end_date").last()
             )
-            context["years"] = list(range(last_year, first_year - 1, -1))
+            first_year = first_project.start_date.year if first_project else None
+            last_year = last_project.end_date.year if last_project else None
+            if first_year and last_year:
+                context["years"] = list(range(last_year, first_year - 1, -1))
+            elif first_year:
+                context["years"] = [first_year]
+            elif last_year:
+                context["years"] = [last_year]
+            else:
+                context["years"] = []
         else:
             context["years"] = []
 
