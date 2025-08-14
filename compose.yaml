@@ -16,7 +16,7 @@ services:
       DJANGO_RUNSERVER_HIDE_WARNING: "true"
       DJANGO_DATABASE_HOST: db
       DJANGO_DATABASE_NAME: zip
-      DJANGO_DATABASE_USERNAME: zip
+      DJANGO_DATABASE_USER: zip
       DJANGO_DATABASE_PASSWORD: changeme
     depends_on:
       - db
