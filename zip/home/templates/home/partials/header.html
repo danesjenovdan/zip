@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags wagtailsettings_tags wagtailimages_tags %}
+{% load static i18n wagtailcore_tags wagtailsettings_tags wagtailimages_tags %}
 
 {% get_settings %}
 
@@ -16,11 +16,21 @@
     </button>
     <ul role="navigation" class="nav-links">
       {% for link in settings.home.HeaderSettings.navigation %}
-      <li class="nav-item {% if page.id == link.value.page.id %}active{% endif %}"><a href="{% if link.value.page %}{% pageurl link.value.page %}{% else %}{{ link.value.url }}{% endif %}" {% if link.value.url %}target="_blank"{% endif %}>{{ link.value.title }}</a></li>
+      <li class="nav-item {% if page.id == link.value.page.id %}active{% endif %}"><a href="{% if link.value.page %}{% pageurl link.value.page.localized %}{% else %}{{ link.value.url }}{% endif %}" {% if link.value.url %}target="_blank"{% endif %}>{{ link.value.title }}</a></li>
       {% endfor %}
     </ul>
     <div class="language-selector">
-      <a href="/">EN | English</a>
+      {% for language_code, language_name in LANGUAGES %}
+        {% get_language_info for language_code as lang %}
+
+        {% if LANGUAGE_CODE != language_code %}
+        {% language language_code %}
+          <a href="{% pageurl page.localized %}" rel="alternate" hreflang="{{ language_code }}">
+            {{ lang.code|upper }} | {{ lang.name_local }}
+          </a>
+        {% endlanguage %}
+        {% endif %}
+      {% endfor %}
     </div>
   </header>
 </div>
