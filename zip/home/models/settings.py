@@ -1,9 +1,17 @@
 from django.db import models
+from django.forms.widgets import CheckboxSelectMultiple
 from django.utils.translation import gettext_lazy as _
 from wagtail import blocks
 from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 from wagtail.contrib.settings.models import BaseGenericSetting, register_setting
 from wagtail.fields import RichTextField, StreamField
+from wagtail.models import Locale
+
+
+def get_locales_choices():
+    return [
+        (locale.language_code, locale.language_name) for locale in Locale.objects.all()
+    ]
 
 
 @register_setting
@@ -37,6 +45,15 @@ class HeaderSettings(BaseGenericSetting):
                                 label=_("Page"),
                             ),
                         ),
+                        (
+                            "locales",
+                            blocks.MultipleChoiceBlock(
+                                choices=get_locales_choices,
+                                label=_("Show in these locales"),
+                                widget=CheckboxSelectMultiple,
+                                required=False,
+                            ),
+                        ),
                     ],
                     icon="link",
                     label=_("Internal link"),
@@ -59,6 +76,15 @@ class HeaderSettings(BaseGenericSetting):
                             blocks.URLBlock(
                                 required=True,
                                 label=_("Link"),
+                            ),
+                        ),
+                        (
+                            "locales",
+                            blocks.MultipleChoiceBlock(
+                                choices=get_locales_choices,
+                                label=_("Show in these locales"),
+                                widget=CheckboxSelectMultiple,
+                                required=False,
                             ),
                         ),
                     ],

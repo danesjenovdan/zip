@@ -2,14 +2,14 @@ from django.db import models
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 from wagtail.admin.panels import FieldPanel
+from wagtail.models import TranslatableMixin
 from wagtail.snippets.models import register_snippet
 
 
 @register_snippet
-class EventCategory(models.Model):
+class EventCategory(TranslatableMixin, models.Model):
     name = models.CharField(
         max_length=255,
-        unique=True,
         verbose_name=_("Name"),
     )
     image = models.ForeignKey(
@@ -22,7 +22,6 @@ class EventCategory(models.Model):
     )
     slug = models.SlugField(
         max_length=255,
-        unique=True,
         verbose_name=_("slug"),
     )
 
@@ -39,17 +38,16 @@ class EventCategory(models.Model):
     def __str__(self):
         return f"{self.name} ({self.slug})"
 
-    class Meta:
+    class Meta(TranslatableMixin.Meta):
         verbose_name = _("Event Category")
         verbose_name_plural = _("Event Categories")
         ordering = ["name"]
 
 
 @register_snippet
-class TeamPosition(models.Model):
+class TeamPosition(TranslatableMixin, models.Model):
     name = models.CharField(
         max_length=255,
-        unique=True,
         verbose_name=_("Name"),
     )
 
@@ -60,7 +58,7 @@ class TeamPosition(models.Model):
     def __str__(self):
         return self.name
 
-    class Meta:
+    class Meta(TranslatableMixin.Meta):
         verbose_name = _("Team Position")
         verbose_name_plural = _("Team Positions")
         ordering = ["name"]

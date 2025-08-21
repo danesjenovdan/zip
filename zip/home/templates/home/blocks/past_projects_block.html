@@ -7,7 +7,7 @@
     </div>
     <h2 class="title">{{ value.title }}</h2>
     {% if value.page %}
-    <a class="link" href="{% pageurl value.page %}">
+    <a class="link" href="{% pageurl value.page.localized %}">
       {{ value.link_text }}&nbsp;<img src="{% static "img/arrow.svg" %}" alt="">
     </a>
     {% endif %}
