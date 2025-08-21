@@ -2,14 +2,14 @@
 
 <div class="news-item js-news-item">
   <div class="news-item__image">
-    <a href="{% pageurl news_item %}">{% image news_item.image fill-730x400 %}</a>
+    <a href="{% pageurl news_item.localized %}">{% image news_item.image fill-730x400 %}</a>
   </div>
   <div class="news-item__content">
-    <h3 class="news-item__title"><a href="{% pageurl news_item %}" class="js-item-link">{{ news_item.title }}</a></h3>
+    <h3 class="news-item__title"><a href="{% pageurl news_item.localized %}" class="js-item-link">{{ news_item.title }}</a></h3>
     <div class="news-item__date">
       {% if news_item.publish_datetime %}<span>{{ news_item.publish_datetime|zip_date:"SHORT_DATE_FORMAT" }}</span>{% endif %}
       {% if news_item.publish_datetime and news_item.project %} | {% endif %}
-      {% if news_item.project %}<a href="{% pageurl news_item.project %}">{{ news_item.project.title }}</a>{% endif %}
+      {% if news_item.project %}<a href="{% pageurl news_item.project.localized %}">{{ news_item.project.title }}</a>{% endif %}
     </div>
     {% if news_item.body.first_block_by_name.rich_text_block %}
     <p class="news-item__excerpt">{{ news_item.body.first_block_by_name.rich_text_block|strip_tags_excerpt }}</p>

@@ -4,8 +4,8 @@ from django.db.models import Q
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from wagtail import blocks
-from wagtail.documents.blocks import DocumentChooserBlock
 from wagtail.images.blocks import ImageChooserBlock
+from wagtail.models import Locale
 
 from .snippets import TeamPosition
 
@@ -576,7 +576,8 @@ class TeamBlock(blocks.StructBlock):
 
         context = super().get_context(value, parent_context=parent_context)
 
-        context["positions"] = TeamPosition.objects.all()
+        locale = Locale.get_active()
+        context["positions"] = TeamPosition.objects.filter(locale=locale)
 
         return context
 

@@ -43,7 +43,7 @@ class HomePage(Page):
     )
 
     parent_page_types = ["wagtailcore.Page"]
-    max_count = 2
+    max_count = 1
 
     content_panels = Page.content_panels + [
         FieldPanel("body"),

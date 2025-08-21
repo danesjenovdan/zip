@@ -1,6 +1,6 @@
 {% load i18n wagtailcore_tags wagtailimages_tags zip_extras %}
 
-<a class="project-card" href="{% pageurl project %}" data-year="{{ project.start_date|date:"Y" }}-{{ project.end_date|date:"Y" }}">
+<a class="project-card" href="{% pageurl project.localized %}" data-year="{{ project.start_date|date:"Y" }}-{{ project.end_date|date:"Y" }}">
   <div class="project-card__image">
     {% image project.image fill-730x400 %}
   </div>

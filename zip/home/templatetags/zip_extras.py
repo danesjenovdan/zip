@@ -42,10 +42,18 @@ def strip_tags_excerpt(value, words=33):
 
 
 @register.filter
-def team_position_name(value):
+def team_position_localized_id(value):
     if value:
         if position := TeamPosition.objects.filter(id=value).first():
-            return position.name
+            return position.localized.id
+    return value
+
+
+@register.filter
+def team_position_localized_name(value):
+    if value:
+        if position := TeamPosition.objects.filter(id=value).first():
+            return position.localized.name
     return value
 
 
