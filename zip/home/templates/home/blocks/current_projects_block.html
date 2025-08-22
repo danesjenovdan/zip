@@ -14,7 +14,9 @@
   </div>
   <div class="project-list">
     {% for project in current_projects %}
-    {% include "home/partials/project_card.html" with project=project only %}
+      {% if project %}
+      {% include "home/partials/project_card.html" with project=project only %}
+      {% endif %}
     {% endfor %}
   </div>
 </div>

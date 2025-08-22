@@ -43,7 +43,9 @@
   </div>
   <div class="event-list">
     {% for event in events %}
-    {% include "home/partials/event_card.html" with event=event only %}
+      {% if event %}
+      {% include "home/partials/event_card.html" with event=event only %}
+      {% endif %}
     {% endfor %}
   </div>
 </div>

@@ -14,7 +14,9 @@
   </div>
   <div class="news-list">
     {% for news_item in news_items %}
-    {% include "home/partials/news_item.html" with news_item=news_item only %}
+      {% if news_item %}
+      {% include "home/partials/news_item.html" with news_item=news_item only %}
+      {% endif %}
     {% endfor %}
   </div>
 </div>

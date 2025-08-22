@@ -436,7 +436,8 @@ class PastProjectsBlock(blocks.StructBlock):
         if isinstance(project_parent_page, ProjectListPage):
             current_project_ids = []
             for project in project_parent_page.current_projects:
-                current_project_ids.append(project.value.id)
+                if project and project.value:
+                    current_project_ids.append(project.value.id)
             context["projects"] = (
                 ProjectPage.objects.child_of(project_parent_page)
                 .live()
