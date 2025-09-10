@@ -91,6 +91,14 @@ def zip_date(value, arg=None):
     return date_filter(value, arg)
 
 
+@register.filter(expects_localtime=True)
+def zip_show_time(value):
+    # if time is 00:00, do not show it
+    if value and value.hour == 0 and value.minute == 0:
+        return False
+    return True
+
+
 @register.filter
 def generate_event_calendar_options(page):
     options = {

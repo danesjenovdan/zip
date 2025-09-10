@@ -9,7 +9,7 @@
         <div class="project"><a href="{% pageurl page.project.localized %}">{{ page.project.title }}</a></div>
         {% endif %}
         {% if page.publish_datetime %}
-        <div class="date">{{ page.publish_datetime.date|zip_date:"SHORT_DATE_FORMAT" }}</div>
+        <div class="date">{{ page.publish_datetime|zip_date:"SHORT_DATE_FORMAT" }}</div>
         {% endif %}
         {% if page.start_date and page.end_date %}
           {% if page.start_date == page.end_date %}

@@ -90,11 +90,17 @@ class EventPage(Page):
         null=True,
         blank=True,
         verbose_name=_("Start date and time"),
+        help_text=_(
+            "Set time to 00:00 if it is not relevant and it will not be displayed."
+        ),
     )
     end_datetime = models.DateTimeField(
         null=True,
         blank=True,
         verbose_name=_("End date and time"),
+        help_text=_(
+            "Set time to 00:00 if it is not relevant and it will not be displayed."
+        ),
     )
     location = models.CharField(
         max_length=255,
