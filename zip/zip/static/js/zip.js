@@ -107,14 +107,34 @@ function setupFilters() {
           const itemValue = item.dataset[filterKey];
           if (filterIsRange) {
             const filterValueNum = Number(filterValue);
-            const itemValueNums = itemValue.split("-").map(Number);
-            if (
-              filterValue === "all" ||
-              (itemValueNums.length === 2 &&
-                itemValueNums[0] <= filterValueNum &&
-                itemValueNums[1] >= filterValueNum)
-            ) {
+            const itemValueNums = itemValue
+              .split("-")
+              .map((v) => Number.parseInt(v, 10));
+            if (filterValue === "all") {
               item.style.display = "";
+            } else if (itemValueNums.length === 2) {
+              if (
+                !Number.isNaN(itemValueNums[0]) &&
+                Number.isNaN(itemValueNums[1]) &&
+                itemValueNums[0] === filterValueNum
+              ) {
+                item.style.display = "";
+              } else if (
+                Number.isNaN(itemValueNums[0]) &&
+                !Number.isNaN(itemValueNums[1]) &&
+                itemValueNums[1] === filterValueNum
+              ) {
+                item.style.display = "";
+              } else if (
+                !Number.isNaN(itemValueNums[0]) &&
+                !Number.isNaN(itemValueNums[1]) &&
+                itemValueNums[0] <= filterValueNum &&
+                itemValueNums[1] >= filterValueNum
+              ) {
+                item.style.display = "";
+              } else {
+                item.style.display = "none";
+              }
             } else {
               item.style.display = "none";
             }

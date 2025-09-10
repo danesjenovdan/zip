@@ -179,6 +179,11 @@ class FooterSettings(BaseGenericSetting):
         blank=True,
         verbose_name=_("Consent label"),
     )
+    newsletter_signup_second_label = models.CharField(
+        max_length=255,
+        blank=True,
+        verbose_name=_("Second label"),
+    )
     newsletter_signup_submit_text = models.CharField(
         max_length=255,
         blank=True,
@@ -200,6 +205,7 @@ class FooterSettings(BaseGenericSetting):
                 FieldPanel("newsletter_signup_title"),
                 FieldPanel("newsletter_signup_email_label"),
                 FieldPanel("newsletter_signup_consent_label"),
+                FieldPanel("newsletter_signup_second_label"),
                 FieldPanel("newsletter_signup_submit_text"),
             ],
             heading=_("Newsletter signup"),

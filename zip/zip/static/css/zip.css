@@ -1161,7 +1161,7 @@ header.page-header {
       }
 
       &.contact {
-        flex-basis: 25%;
+        /* flex-basis: 25%; */
 
         .social-media {
           list-style: none;

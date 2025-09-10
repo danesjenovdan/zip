@@ -90,11 +90,17 @@ class EventPage(Page):
         null=True,
         blank=True,
         verbose_name=_("Start date and time"),
+        help_text=_(
+            "Set time to 00:00 if it is not relevant and it will not be displayed."
+        ),
     )
     end_datetime = models.DateTimeField(
         null=True,
         blank=True,
         verbose_name=_("End date and time"),
+        help_text=_(
+            "Set time to 00:00 if it is not relevant and it will not be displayed."
+        ),
     )
     location = models.CharField(
         max_length=255,
@@ -143,19 +149,6 @@ class EventPage(Page):
 
 
 class ProjectListPage(Page):
-    current_projects = StreamField(
-        [
-            (
-                "project",
-                blocks.PageChooserBlock(
-                    page_type=["home.ProjectPage"],
-                    label=_("Project"),
-                ),
-            ),
-        ],
-        blank=True,
-        verbose_name=_("Current projects"),
-    )
     body = StreamField(
         [
             ("current_projects_block", CurrentProjectsBlock()),
@@ -169,7 +162,6 @@ class ProjectListPage(Page):
     max_count = 1
 
     content_panels = Page.content_panels + [
-        FieldPanel("current_projects"),
         FieldPanel("body"),
     ]
 
@@ -322,6 +314,7 @@ class GenericPage(Page):
                 ColorBackgroundWithTextAndImageBlock(),
             ),
             ("gallery_block", GalleryBlock()),
+            ("material_list_block", MaterialListBlock()),
             ("promotion_block", PromotionBlock()),
             ("newsletter_signup_block", NewsletterSignupBlock()),
         ],
