@@ -149,16 +149,19 @@ class CurrentProjectsBlock(blocks.StructBlock):
     )
 
     def get_context(self, value, parent_context=None):
-        from .pages import ProjectListPage
+        from .pages import ProjectListPage, ProjectPage
 
         context = super().get_context(value, parent_context=parent_context)
 
         project_parent_page = value["page"] if value["page"] else context["page"]
         if isinstance(project_parent_page, ProjectListPage):
-            current_projects = []
-            for project in project_parent_page.current_projects:
-                current_projects.append(project.value)
-            context["current_projects"] = current_projects
+            today = timezone.now().date()
+            context["current_projects"] = (
+                ProjectPage.objects.child_of(project_parent_page)
+                .live()
+                .filter(start_date__lte=today)
+                .filter(Q(end_date__gte=today) | Q(end_date__isnull=True))
+            )
 
         return context
 
@@ -434,10 +437,14 @@ class PastProjectsBlock(blocks.StructBlock):
 
         project_parent_page = context["page"]
         if isinstance(project_parent_page, ProjectListPage):
-            current_project_ids = []
-            for project in project_parent_page.current_projects:
-                if project and project.value:
-                    current_project_ids.append(project.value.id)
+            today = timezone.now().date()
+            current_project_ids = (
+                ProjectPage.objects.child_of(project_parent_page)
+                .live()
+                .filter(start_date__lte=today)
+                .filter(Q(end_date__gte=today) | Q(end_date__isnull=True))
+                .values_list("id", flat=True)
+            )
             context["projects"] = (
                 ProjectPage.objects.child_of(project_parent_page)
                 .live()
