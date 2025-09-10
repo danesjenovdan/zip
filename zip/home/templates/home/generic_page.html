@@ -4,7 +4,7 @@
 {% block content %}
 
 {% for block in page.body %}
-{% if block.block_type == "rich_text_block" or block.block_type == "gallery_block" %}
+{% if block.block_type == "rich_text_block" or block.block_type == "gallery_block" or block.block_type == "material_list_block" %}
 <div class="narrow-body">
 <section>{% include_block block %}</section>
 </div>

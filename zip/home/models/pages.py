@@ -308,6 +308,7 @@ class GenericPage(Page):
                 ColorBackgroundWithTextAndImageBlock(),
             ),
             ("gallery_block", GalleryBlock()),
+            ("material_list_block", MaterialListBlock()),
             ("promotion_block", PromotionBlock()),
             ("newsletter_signup_block", NewsletterSignupBlock()),
         ],
