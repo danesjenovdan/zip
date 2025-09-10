@@ -434,6 +434,7 @@ class PastProjectsBlock(blocks.StructBlock):
         from .pages import ProjectListPage, ProjectPage
 
         context = super().get_context(value, parent_context=parent_context)
+        all_projects = ProjectPage.objects.none()
 
         project_parent_page = context["page"]
         if isinstance(project_parent_page, ProjectListPage):
@@ -445,14 +446,14 @@ class PastProjectsBlock(blocks.StructBlock):
                 .filter(Q(end_date__gte=today) | Q(end_date__isnull=True))
                 .values_list("id", flat=True)
             )
-            context["projects"] = (
+            all_projects = (
                 ProjectPage.objects.child_of(project_parent_page)
                 .live()
                 .exclude(id__in=current_project_ids)
                 .order_by("-end_date", "id")
             )
+            context["projects"] = all_projects
 
-        all_projects = ProjectPage.objects.all().specific()
         if all_projects.exists():
             first_project = (
                 all_projects.filter(start_date__isnull=False)
