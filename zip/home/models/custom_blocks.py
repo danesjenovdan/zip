@@ -403,6 +403,10 @@ class MaterialBlock(blocks.StructBlock):
     title = blocks.CharBlock(
         label=_("Title"),
     )
+    description = blocks.RichTextBlock(
+        required=False,
+        label=_("Description"),
+    )
     link = blocks.URLBlock(
         label=_("Link"),
     )
