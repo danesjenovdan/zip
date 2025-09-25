@@ -8,4 +8,4 @@ resources:
 images:
   - name: zip
     newName: rg.fr-par.scw.cloud/djnd/zip
-    newTag: 'b53277d07905b7b2c3eca043eef21ec656925b76'
+    newTag: 'a400adfd5e4d05ca98f4d064e72a169015242e05'
