@@ -45,10 +45,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - files.zip.lb.djnd.si
+        - files.zainproti.si
       secretName: zip-nginx-tls
   rules:
-    - host: files.zip.lb.djnd.si
+    - host: files.zainproti.si
       http:
         paths:
           - path: /
