@@ -9,10 +9,21 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - zip.lb.djnd.si
+        - zainproti.si
+        - www.zainproti.si
       secretName: zip-tls
   rules:
-    - host: zip.lb.djnd.si
+    - host: zainproti.si
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: zip
+                port:
+                  number: 8000
+    - host: www.zainproti.si
       http:
         paths:
           - path: /
@@ -34,10 +45,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - files.zip.lb.djnd.si
+        - files.zainproti.si
       secretName: zip-nginx-tls
   rules:
-    - host: files.zip.lb.djnd.si
+    - host: files.zainproti.si
       http:
         paths:
           - path: /
