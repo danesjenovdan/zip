@@ -38,6 +38,9 @@
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}
+
+        <script defer data-domain="zainproti.si" src="https://plausible.lb.djnd.si/js/script.file-downloads.outbound-links.js"></script>
+        <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
     </head>
 
     <body class="{{ page|page_class_for_css_class }} {% block body_class %}{% endblock %}">

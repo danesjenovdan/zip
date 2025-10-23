@@ -4,13 +4,13 @@
   <div class="awards-results-buttons">
     {% if value.awards_link %}
     <a class="awards-results-buttons__awards" href="{{ value.awards_link }}">
-      {% translate "Awards" %}
+      {% if value.awards_label %}{{ value.awards_label }}{% else %}{% translate "Awards" %}{% endif %}
       <img src="{% static "img/awards.png" %}" alt="">
     </a>
     {% endif %}
     {% if value.results_link %}
     <a class="awards-results-buttons__results" href="{{ value.results_link }}">
-      {% translate "Results" %}
+      {% if value.results_label %}{{ value.results_label }}{% else %}{% translate "Results" %}{% endif %}
       <img src="{% static "img/results.png" %}" alt="">
     </a>
     {% endif %}

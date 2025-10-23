@@ -606,9 +606,19 @@ class RichTextBlock(blocks.RichTextBlock):
 
 
 class AwardsAndResultsBlock(blocks.StructBlock):
+    awards_label = blocks.CharBlock(
+        required=False,
+        label=_("Awards label"),
+        help_text=_("Leave empty to show default label."),
+    )
     awards_link = blocks.URLBlock(
         required=False,
         label=_("Link to awards"),
+    )
+    results_label = blocks.CharBlock(
+        required=False,
+        label=_("Results label"),
+        help_text=_("Leave empty to show default label."),
     )
     results_link = blocks.URLBlock(
         required=False,

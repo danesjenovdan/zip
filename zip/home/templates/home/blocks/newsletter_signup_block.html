@@ -22,16 +22,34 @@
             <span>{{ settings.home.FooterSettings.newsletter_signup_consent_label }}</span>
           </label>
         </div>
+        {% if settings.home.FooterSettings.newsletter_signup_second_label %}
         <div class="form-row checkbox">
           <label>
-            <input type="checkbox" name="second" required>
+            <input type="checkbox" name="second">
             <span>{{ settings.home.FooterSettings.newsletter_signup_second_label }}</span>
           </label>
         </div>
+        {% endif %}
+        {% if settings.home.FooterSettings.newsletter_signup_third_label %}
+        <div class="form-row checkbox">
+          <label>
+            <input type="checkbox" name="third">
+            <span>{{ settings.home.FooterSettings.newsletter_signup_third_label }}</span>
+          </label>
+        </div>
+        {% endif %}
+        {% if settings.home.FooterSettings.newsletter_signup_fourth_label %}
+        <div class="form-row checkbox">
+          <label>
+            <input type="checkbox" name="fourth">
+            <span>{{ settings.home.FooterSettings.newsletter_signup_fourth_label }}</span>
+          </label>
+        </div>
+        {% endif %}
         <div class="form-row">
-          <a href="" class="newsletter__button">
+          <button type="submit" class="newsletter__button">
             {{ settings.home.FooterSettings.newsletter_signup_submit_text }}&nbsp;<img src="{% static "img/arrow-bold.svg" %}" alt="">
-          </a>
+          </button>
         </div>
       </form>
     </div>
