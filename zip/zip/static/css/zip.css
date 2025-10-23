@@ -1940,6 +1940,7 @@ header.page-header {
       }
 
       img {
+        flex-shrink: 0;
         mix-blend-mode: multiply;
         width: 6rem;
         height: 6rem;

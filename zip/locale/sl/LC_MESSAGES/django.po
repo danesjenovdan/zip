@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-10 16:14+0200\n"
+"POT-Creation-Date: 2025-10-23 10:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,9 +23,9 @@ msgstr ""
 #: home/models/custom_blocks.py:115 home/models/custom_blocks.py:135
 #: home/models/custom_blocks.py:175 home/models/custom_blocks.py:201
 #: home/models/custom_blocks.py:330 home/models/custom_blocks.py:390
-#: home/models/custom_blocks.py:404 home/models/custom_blocks.py:416
-#: home/models/custom_blocks.py:430 home/models/custom_blocks.py:488
-#: home/models/custom_blocks.py:526 home/models/custom_blocks.py:576
+#: home/models/custom_blocks.py:404 home/models/custom_blocks.py:420
+#: home/models/custom_blocks.py:434 home/models/custom_blocks.py:492
+#: home/models/custom_blocks.py:530 home/models/custom_blocks.py:580
 #: home/models/settings.py:38 home/models/settings.py:71
 #: home/models/settings.py:170
 msgid "Title"
@@ -36,13 +36,13 @@ msgid "Subtitle"
 msgstr "Podnaslov"
 
 #: home/models/custom_blocks.py:24 home/models/custom_blocks.py:183
-#: home/models/custom_blocks.py:530
+#: home/models/custom_blocks.py:408 home/models/custom_blocks.py:534
 msgid "Description"
 msgstr "Opis"
 
 #: home/models/custom_blocks.py:28 home/models/custom_blocks.py:179
-#: home/models/custom_blocks.py:393 home/models/custom_blocks.py:542
-#: home/models/custom_blocks.py:567 home/models/pages.py:116
+#: home/models/custom_blocks.py:393 home/models/custom_blocks.py:546
+#: home/models/custom_blocks.py:571 home/models/pages.py:116
 #: home/models/pages.py:180 home/models/pages.py:255 home/models/snippets.py:21
 msgid "Image"
 msgstr "Slika"
@@ -90,7 +90,7 @@ msgstr "Projekti, ki so označeni kot aktualni."
 msgid "Current projects"
 msgstr "Aktualni projekti"
 
-#: home/models/custom_blocks.py:191 home/models/custom_blocks.py:407
+#: home/models/custom_blocks.py:191 home/models/custom_blocks.py:411
 #: home/models/settings.py:78 home/models/settings.py:146
 msgid "Link"
 msgstr "Povezava"
@@ -131,104 +131,116 @@ msgstr "Slike"
 msgid "Gallery"
 msgstr "Galerija"
 
-#: home/models/custom_blocks.py:411
+#: home/models/custom_blocks.py:415
 msgid "Material"
 msgstr "Gradivo"
 
-#: home/models/custom_blocks.py:420 home/models/custom_blocks.py:424
+#: home/models/custom_blocks.py:424 home/models/custom_blocks.py:428
 msgid "Material list"
 msgstr "Seznam gradiva"
 
-#: home/models/custom_blocks.py:482
+#: home/models/custom_blocks.py:486
 msgid "Past projects"
 msgstr "Pretekli projekti"
 
-#: home/models/custom_blocks.py:506 home/models/pages.py:231
+#: home/models/custom_blocks.py:510 home/models/pages.py:231
 msgid "News list"
 msgstr "Seznam novic"
 
-#: home/models/custom_blocks.py:513
+#: home/models/custom_blocks.py:517
 msgid "White"
 msgstr "Bela"
 
-#: home/models/custom_blocks.py:514
+#: home/models/custom_blocks.py:518
 msgid "Light Yellow"
 msgstr "Rahlo rumena"
 
-#: home/models/custom_blocks.py:515
+#: home/models/custom_blocks.py:519
 msgid "Yellow"
 msgstr "Rumena"
 
-#: home/models/custom_blocks.py:516
+#: home/models/custom_blocks.py:520
 msgid "Light Red"
 msgstr "Rahlo rdeča"
 
-#: home/models/custom_blocks.py:517
+#: home/models/custom_blocks.py:521
 msgid "Red"
 msgstr "Rdeča"
 
-#: home/models/custom_blocks.py:518
+#: home/models/custom_blocks.py:522
 msgid "Light Gray"
 msgstr "Rahlo siva"
 
-#: home/models/custom_blocks.py:519
+#: home/models/custom_blocks.py:523
 msgid "Gray"
 msgstr "Siva"
 
-#: home/models/custom_blocks.py:522
+#: home/models/custom_blocks.py:526
 msgid "Background color"
 msgstr "Barva ozadja"
 
-#: home/models/custom_blocks.py:534
+#: home/models/custom_blocks.py:538
 msgid "Left"
 msgstr "Leva"
 
-#: home/models/custom_blocks.py:535
+#: home/models/custom_blocks.py:539
 msgid "Right"
 msgstr "Desna"
 
-#: home/models/custom_blocks.py:538
+#: home/models/custom_blocks.py:542
 msgid "Image position"
 msgstr "Položaj slike"
 
-#: home/models/custom_blocks.py:546
+#: home/models/custom_blocks.py:550
 msgid "Color background with text and image"
 msgstr "Barvno ozadje z besedilom in sliko"
 
-#: home/models/custom_blocks.py:559 home/models/snippets.py:13
+#: home/models/custom_blocks.py:563 home/models/snippets.py:13
 #: home/models/snippets.py:51
 msgid "Name"
 msgstr "Ime"
 
-#: home/models/custom_blocks.py:563
+#: home/models/custom_blocks.py:567
 msgid "Position"
 msgstr "Položaj"
 
-#: home/models/custom_blocks.py:571
+#: home/models/custom_blocks.py:575
 msgid "Team member"
 msgstr "Član ekipe"
 
-#: home/models/custom_blocks.py:580
+#: home/models/custom_blocks.py:584
 msgid "Members"
 msgstr "Člani"
 
-#: home/models/custom_blocks.py:594
+#: home/models/custom_blocks.py:598
 msgid "Team"
 msgstr "Ekipa"
 
-#: home/models/custom_blocks.py:600
+#: home/models/custom_blocks.py:604
 msgid "Text"
 msgstr "Besedilo"
 
-#: home/models/custom_blocks.py:607
+#: home/models/custom_blocks.py:611
+msgid "Awards label"
+msgstr "Oznaka za priznanja"
+
+#: home/models/custom_blocks.py:612 home/models/custom_blocks.py:621
+msgid "Leave empty to show default label."
+msgstr "Pustite prazno za prikaz privzete oznake."
+
+#: home/models/custom_blocks.py:616
 msgid "Link to awards"
 msgstr "Povezava do priznanj"
 
-#: home/models/custom_blocks.py:611
+#: home/models/custom_blocks.py:620
+msgid "Results label"
+msgstr "Oznaka za rezultate"
+
+#: home/models/custom_blocks.py:625
 msgid "Link to results"
 msgstr "Povezava do rezultatov"
 
-#: home/models/custom_blocks.py:615
+#: home/models/custom_blocks.py:629
 msgid "Awards and results"
 msgstr "Priznanja in rezultati"
 
