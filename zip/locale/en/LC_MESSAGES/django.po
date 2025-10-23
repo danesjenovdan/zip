@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-23 10:44+0200\n"
+"POT-Creation-Date: 2025-10-23 10:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -106,7 +106,7 @@ msgstr ""
 msgid "Newsletter signup texts are managed under Footer settings."
 msgstr ""
 
-#: home/models/custom_blocks.py:209 home/models/settings.py:211
+#: home/models/custom_blocks.py:209 home/models/settings.py:223
 msgid "Newsletter signup"
 msgstr ""
 
@@ -407,14 +407,22 @@ msgid "Second label"
 msgstr ""
 
 #: home/models/settings.py:190
+msgid "Third label"
+msgstr ""
+
+#: home/models/settings.py:195
+msgid "Fourth label"
+msgstr ""
+
+#: home/models/settings.py:200
 msgid "Submit text"
 msgstr ""
 
-#: home/models/settings.py:201
+#: home/models/settings.py:211
 msgid "Contact info"
 msgstr ""
 
-#: home/models/settings.py:216
+#: home/models/settings.py:228
 msgid "Footer Settings"
 msgstr ""
 

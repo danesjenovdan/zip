@@ -197,9 +197,21 @@ function setupFilters() {
   });
 }
 
+function setupNewsletterSignupForm() {
+  const forms = document.querySelectorAll(".newsletter__form");
+  forms.forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      // TODO: submission logic
+      alert("Not implemented yet. Please email us info@zainproti.si");
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   setupGalleries();
   setupClickableNewsItems();
   setupMobileMenuToggle();
   setupFilters();
+  setupNewsletterSignupForm();
 });
