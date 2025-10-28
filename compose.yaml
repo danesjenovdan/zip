@@ -18,6 +18,7 @@ services:
       DJANGO_DATABASE_NAME: zip
       DJANGO_DATABASE_USER: zip
       DJANGO_DATABASE_PASSWORD: changeme
+      DJANGO_MAILERLITE_API_KEY: your-mailerlite-api-key
     depends_on:
       - db
 

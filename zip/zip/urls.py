@@ -13,6 +13,7 @@ urlpatterns = [
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
+    path("api/", include("home.urls")),
 ]
 
 if settings.DEBUG:

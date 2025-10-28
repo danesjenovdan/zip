@@ -198,12 +198,68 @@ function setupFilters() {
 }
 
 function setupNewsletterSignupForm() {
-  const forms = document.querySelectorAll(".newsletter__form");
+  const forms = document.querySelectorAll(".newsletter__form form");
   forms.forEach((form) => {
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
-      // TODO: submission logic
-      alert("Not implemented yet. Please email us info@zainproti.si");
+
+      const submitButton = form.querySelector("button[type='submit']");
+      submitButton.disabled = true;
+
+      try {
+        const csrfToken = form.querySelector(
+          "input[name='csrfmiddlewaretoken']"
+        ).value;
+
+        const body = {};
+
+        const emailInput = form.querySelector("input[name='email']");
+        const email = emailInput.value.trim();
+        body[emailInput.name] = email;
+
+        const checkboxes = form.querySelectorAll("input[type='checkbox']");
+        checkboxes.forEach((checkbox) => {
+          body[checkbox.name] = checkbox.checked ? "on" : "off";
+        });
+
+        const res = await fetch("/api/subscribe-to-newsletter/", {
+          method: "POST",
+          mode: "same-origin",
+          headers: {
+            "X-CSRFToken": csrfToken,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(body),
+        });
+
+        if (!res.ok) {
+          const text = await res.text().catch(() => null);
+          if (text) {
+            alert(`Error: ${text}`);
+          } else {
+            alert(`Error: ${res.status} ${res.statusText}`);
+          }
+          return;
+        }
+
+        const json = await res.json();
+        if (json?.data?.status !== "active") {
+          if (json?.data?.status) {
+            alert(`Error: Bad subscription status: ${json.data.status}`);
+          } else {
+            alert(`Error: Bad response`);
+          }
+          return;
+        }
+
+        form.reset();
+        alert("Hvala za prijavo na naše novice!");
+      } catch (error) {
+        console.error("Newsletter signup error:", error);
+        alert(`Error: ${error}`);
+      } finally {
+        submitButton.disabled = false;
+      }
     });
   });
 }
