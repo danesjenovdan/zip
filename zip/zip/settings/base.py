@@ -219,3 +219,21 @@ WAGTAILDOCS_EXTENSIONS = [
     "xlsx",
     "zip",
 ]
+
+# MailerLite settings
+MAILERLITE_BASE_URL = "https://connect.mailerlite.com/api"
+MAILERLITE_API_KEY = os.getenv("DJANGO_MAILERLITE_API_KEY", "")
+MAILERLITE_GROUPS = {
+    "second": {
+        "name": "OŠ mentorji",
+        "id": "169138131539330364",
+    },
+    "third": {
+        "name": "SŠ mentorji",
+        "id": "169138118552716337",
+    },
+    "fourth": {
+        "name": "Izobraževanja",
+        "id": "169138312359970399",
+    },
+}
