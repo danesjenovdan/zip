@@ -1,8 +1,8 @@
 import uuid
 
 from django.db import models
+from django.shortcuts import redirect
 from django.utils.translation import gettext_lazy as _
-from wagtail import blocks
 from wagtail.admin.panels import FieldPanel
 from wagtail.fields import StreamField
 from wagtail.models import Page
@@ -41,13 +41,28 @@ class HomePage(Page):
         blank=True,
         verbose_name=_("Page body"),
     )
+    redirect_to_page = models.ForeignKey(
+        "wagtailcore.Page",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="+",
+        verbose_name=_("Redirect to page"),
+        help_text=_("If set, redirect to this page when visiting the home page."),
+    )
 
     parent_page_types = ["wagtailcore.Page"]
     max_count = 1
 
     content_panels = Page.content_panels + [
         FieldPanel("body"),
+        FieldPanel("redirect_to_page"),
     ]
+
+    def serve(self, request, *args, **kwargs):
+        if self.redirect_to_page:
+            return redirect(self.redirect_to_page.url)
+        return super().serve(request, *args, **kwargs)
 
     class Meta:
         verbose_name = _("Home page")
