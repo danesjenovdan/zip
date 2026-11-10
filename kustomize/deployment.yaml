@@ -102,6 +102,7 @@ spec:
               cpu: 400m
         - name: zip-nginx
           image: nginx:alpine
+          imagePullPolicy: Always
           volumeMounts:
             - name: zip-storage
               mountPath: /usr/share/nginx/html
