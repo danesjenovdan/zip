@@ -1,5 +1,5 @@
 # Use an official Python runtime based on Debian 13 "trixie" as a parent image.
-FROM python:3.14-slim-trixie as builder
+FROM python:3.15-slim-trixie as builder
 
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /usr/local/bin/
 
@@ -55,7 +55,7 @@ USER wagtail
 # Compile locale files.
 RUN python manage.py compilemessages
 
-FROM python:3.14-slim-trixie AS runtime
+FROM python:3.15-slim-trixie AS runtime
 
 # Add user that will be used in the container.
 RUN useradd wagtail
